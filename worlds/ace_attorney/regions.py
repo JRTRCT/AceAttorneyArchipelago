@@ -1,11 +1,11 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, List
 
 from BaseClasses import Entrance, Region
 
 if TYPE_CHECKING:
-    from .world import APQuestWorld
+    from .world import AceAttorneyWorld
 
 # A region is a container for locations ("checks"), which connects to other regions via "Entrance" objects.
 # Many games will model their Regions after physical in-game places, but you can also have more abstract regions.
@@ -17,33 +17,37 @@ if TYPE_CHECKING:
 # This is why we create regions first, and then later we create the locations (in locations.py).
 
 
-def create_and_connect_regions(world: APQuestWorld) -> None:
+def create_and_connect_regions(world: AceAttorneyWorld) -> None:
     create_all_regions(world)
     connect_regions(world)
 
 
-def create_all_regions(world: APQuestWorld) -> None:
+def create_all_regions(world: AceAttorneyWorld) -> None:
     # Creating a region is as simple as calling the constructor of the Region class.
-    overworld = Region("Overworld", world.player, world.multiworld)
-    top_left_room = Region("Top Left Room", world.player, world.multiworld)
-    bottom_right_room = Region("Bottom Right Room", world.player, world.multiworld)
-    right_room = Region("Right Room", world.player, world.multiworld)
-    final_boss_room = Region("Final Boss Room", world.player, world.multiworld)
 
     # Let's put all these regions in a list.
-    regions = [overworld, top_left_room, bottom_right_room, right_room, final_boss_room]
+    regions: List[Region] = []
 
     # Some regions may only exist if the player enables certain options.
     # In our case, the Hammer locks the top middle chest in its own room if the hammer option is enabled.
-    if world.options.hammer:
-        top_middle_room = Region("Top Middle Room", world.player, world.multiworld)
-        regions.append(top_middle_room)
+    if world.options.four_one:
+        four_one = Region("4-1", world.player, world.multiworld)
+        regions.append(four_one)
+    if world.options.four_two:
+        four_one = Region("4-1", world.player, world.multiworld)
+        regions.append(four_one)
+    if world.options.four_one:
+        four_one = Region("4-1", world.player, world.multiworld)
+        regions.append(four_one)
+    if world.options.four_one:
+        four_one = Region("4-1", world.player, world.multiworld)
+        regions.append(four_one)
 
     # We now need to add these regions to multiworld.regions so that AP knows about their existence.
     world.multiworld.regions += regions
 
 
-def connect_regions(world: APQuestWorld) -> None:
+def connect_regions(world: AceAttorneyWorld) -> None:
     # We have regions now, but still need to connect them to each other.
     # But wait, we no longer have access to the region variables we created in create_all_regions()!
     # Luckily, once you've submitted your regions to multiworld.regions,

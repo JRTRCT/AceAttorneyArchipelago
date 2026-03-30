@@ -1,8 +1,12 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, List
+from typing import TYPE_CHECKING, List, Dict, Set
 
 from BaseClasses import Region
+
+import json
+import pkgutil
+import functools
 
 if TYPE_CHECKING:
     from .world import AceAttorneyWorld
@@ -16,24 +20,27 @@ if TYPE_CHECKING:
 # Every location must be inside a region, and you must have at least one region.
 # This is why we create regions first, and then later we create the locations (in locations.py).
 
-case_counts = {
-    "1": 5,
-    "2": 4,
-    "3": 5,
-    "4": 4,
-    "5": 6,
-    "6": 6,
-    "I": 5,
-    "I2": 5,
-    "G": 5,
-    "G2": 5
-    }
-    
-games = [
-    "4",
-    "5",
-    "6"
-    ]
+REGIONS_FILE = "json/regions.json"
+
+class RegionData:
+    name: str = ""
+    case: str = ""
+
+    def __init__(self, name: str, case: str):
+        self.name = f"{case}: {name}"
+        self.case = case
+
+@functools.cache
+def import_regions() -> List[RegionData]:
+    return json.loads(pkgutil.get_data(__name__, REGIONS_FILE).decode("utf-8"), object_hook=lambda d: RegionData(**d))
+
+@functools
+def regions_by_case() -> Dict[str, List[str]]:
+    region_data = import_regions()
+    cases = Set([data.case for data in region_data])
+    regions = {case: [data.name for data in region_data if data.case == case] for case in cases}
+    return cases, regions
+
 
 
 def create_and_connect_regions(world: AceAttorneyWorld) -> None:
@@ -47,11 +54,12 @@ def create_all_regions(world: AceAttorneyWorld) -> None:
     # Let's put all these regions in a list.
     regions: List[Region] = []
 
-    for game in games:
-        for case in range(1, case_counts[game] + 1):
-            region_name = f"{game}-{case}"
-            if region_name in world.options.cases.value:
-                reg = Region(f"Case {region_name}", world.player, world.multiworld)
+    cases, region_dict = regions_by_case()
+
+    for case in cases:
+        if case in world.options.cases.value:
+            for region_name in region_dict[case]:
+                reg = Region(region_name, world.player, world.multiworld)
                 regions.append(reg)
     main_menu = Region("Menu", world.player, world.multiworld)
     regions.append(main_menu)
@@ -61,11 +69,16 @@ def create_all_regions(world: AceAttorneyWorld) -> None:
 
 def connect_regions(world: AceAttorneyWorld) -> None:
     
+    cases, region_dict = regions_by_case()
+
     menu_region = world.get_region("Menu")
 
-    for game in games:
-        for case in range(1, case_counts[game] + 1):
-            region_name = f"{game}-{case}"
-            if region_name in world.options.cases.value:
-                reg = world.get_region(f"Case {region_name}")
-                menu_region.connect(reg, f"Menu to Case {region_name}")
+    for case in cases:
+        if case in world.options.cases.value:
+            for i, region_name in enumerate(region_dict[case]):
+                reg = world.get_region(region_name)
+                if i == 0:
+                    menu_region.connect(reg, f"Menu to Case {region_name}")
+                else:
+                    prev_reg = world.get_region(region_dict[case][i - 1])
+                    prev_reg.connect(reg)

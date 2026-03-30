@@ -78,7 +78,7 @@ def connect_regions(world: AceAttorneyWorld) -> None:
             for i, region_name in enumerate(region_dict[case]):
                 reg = world.get_region(region_name)
                 if i == 0:
-                    menu_region.connect(reg, f"Menu to Case {region_name}")
+                    menu_region.connect(reg, f"Menu to Case {region_name}",)
                 else:
                     prev_reg = world.get_region(region_dict[case][i - 1])
-                    prev_reg.connect(reg)
+                    prev_reg.connect(reg, f"{prev_reg.name} to {region_name}")

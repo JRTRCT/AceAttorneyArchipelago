@@ -34,7 +34,7 @@ class RegionData:
 def import_regions() -> List[RegionData]:
     return json.loads(pkgutil.get_data(__name__, REGIONS_FILE).decode("utf-8"), object_hook=lambda d: RegionData(**d))
 
-@functools
+@functools.cache
 def regions_by_case() -> Dict[str, List[str]]:
     region_data = import_regions()
     cases = Set([data.case for data in region_data])

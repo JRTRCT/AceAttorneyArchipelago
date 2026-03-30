@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, List
 
-from BaseClasses import Entrance, Region
+from BaseClasses import Region
 
 if TYPE_CHECKING:
     from .world import AceAttorneyWorld
@@ -16,6 +16,25 @@ if TYPE_CHECKING:
 # Every location must be inside a region, and you must have at least one region.
 # This is why we create regions first, and then later we create the locations (in locations.py).
 
+case_counts = {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 4,
+    "5": 6,
+    "6": 6,
+    "I": 5,
+    "I2": 5,
+    "G": 5,
+    "G2": 5
+    }
+    
+games = [
+    "4",
+    "5",
+    "6"
+    ]
+
 
 def create_and_connect_regions(world: AceAttorneyWorld) -> None:
     create_all_regions(world)
@@ -28,69 +47,25 @@ def create_all_regions(world: AceAttorneyWorld) -> None:
     # Let's put all these regions in a list.
     regions: List[Region] = []
 
-    # Some regions may only exist if the player enables certain options.
-    # In our case, the Hammer locks the top middle chest in its own room if the hammer option is enabled.
-
-    case_counts = {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 4,
-        "5": 6,
-        "6": 6,
-        "I": 5,
-        "I2": 5,
-        "G": 5,
-        "G2": 5
-        }
-    
-    games = [
-        "4",
-        "5",
-        "6"
-    ]
-
     for game in games:
         for case in range(1, case_counts[game] + 1):
             region_name = f"{game}-{case}"
             if region_name in world.options.cases.value:
                 reg = Region(f"Case {region_name}", world.player, world.multiworld)
                 regions.append(reg)
+    main_menu = Region("Menu", world.player, world.multiworld)
+    regions.append(main_menu)
     # We now need to add these regions to multiworld.regions so that AP knows about their existence.
     world.multiworld.regions += regions
 
 
 def connect_regions(world: AceAttorneyWorld) -> None:
-    # We have regions now, but still need to connect them to each other.
-    # But wait, we no longer have access to the region variables we created in create_all_regions()!
-    # Luckily, once you've submitted your regions to multiworld.regions,
-    # you can get them at any time using world.get_region(...).
-    overworld = world.get_region("Overworld")
-    top_left_room = world.get_region("Top Left Room")
-    bottom_right_room = world.get_region("Bottom Right Room")
-    right_room = world.get_region("Right Room")
-    final_boss_room = world.get_region("Final Boss Room")
+    
+    menu_region = world.get_region("Menu")
 
-    # Okay, now we can get connecting. For this, we need to create Entrances.
-    # Entrances are inherently one-way, but crucially, AP assumes you can always return to the origin region.
-    # One way to create an Entrance is by calling the Entrance constructor.
-    overworld_to_bottom_right_room = Entrance(world.player, "Overworld to Bottom Right Room", parent=overworld)
-    overworld.exits.append(overworld_to_bottom_right_room)
-
-    # You can then connect the Entrance to the target region.
-    overworld_to_bottom_right_room.connect(bottom_right_room)
-
-    # An even easier way is to use the region.connect helper.
-    overworld.connect(right_room, "Overworld to Right Room")
-    right_room.connect(final_boss_room, "Right Room to Final Boss Room")
-
-    # The region.connect helper even allows adding a rule immediately.
-    # We'll talk more about rule creation in the set_all_rules() function in rules.py.
-    overworld.connect(top_left_room, "Overworld to Top Left Room", lambda state: state.has("Key", world.player))
-
-    # Some Entrances may only exist if the player enables certain options.
-    # In our case, the Hammer locks the top middle chest in its own room if the hammer option is enabled.
-    # In this case, we previously created an extra "Top Middle Room" region that we now need to connect to Overworld.
-    if world.options.hammer:
-        top_middle_room = world.get_region("Top Middle Room")
-        overworld.connect(top_middle_room, "Overworld to Top Middle Room")
+    for game in games:
+        for case in range(1, case_counts[game] + 1):
+            region_name = f"{game}-{case}"
+            if region_name in world.options.cases.value:
+                reg = world.get_region(f"Case {region_name}")
+                menu_region.connect(reg, f"Menu to Case {region_name}")

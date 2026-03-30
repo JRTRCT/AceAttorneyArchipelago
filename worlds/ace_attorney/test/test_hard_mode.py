@@ -1,7 +1,7 @@
-from .bases import APQuestTestBase
+from .bases import AceAttorneyTestBase
 
 
-class TestHardMode(APQuestTestBase):
+class TestHardMode(AceAttorneyTestBase):
     options = {
         "hard_mode": True,
     }

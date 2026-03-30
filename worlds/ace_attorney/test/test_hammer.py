@@ -1,7 +1,7 @@
-from .bases import APQuestTestBase
+from .bases import AceAttorneyTestBase
 
 
-class TestHammerOff(APQuestTestBase):
+class TestHammerOff(AceAttorneyTestBase):
     options = {
         "hammer": False,
     }
@@ -31,7 +31,7 @@ class TestHammerOff(APQuestTestBase):
         self.assertTrue(top_middle_chest_player_one.can_reach(self.multiworld.state))
 
 
-class TestHammerOn(APQuestTestBase):
+class TestHammerOn(AceAttorneyTestBase):
     options = {
         "hammer": True,
     }

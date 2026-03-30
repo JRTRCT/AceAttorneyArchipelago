@@ -30,19 +30,32 @@ def create_all_regions(world: AceAttorneyWorld) -> None:
 
     # Some regions may only exist if the player enables certain options.
     # In our case, the Hammer locks the top middle chest in its own room if the hammer option is enabled.
-    if world.options.four_one:
-        four_one = Region("4-1", world.player, world.multiworld)
-        regions.append(four_one)
-    if world.options.four_two:
-        four_one = Region("4-1", world.player, world.multiworld)
-        regions.append(four_one)
-    if world.options.four_one:
-        four_one = Region("4-1", world.player, world.multiworld)
-        regions.append(four_one)
-    if world.options.four_one:
-        four_one = Region("4-1", world.player, world.multiworld)
-        regions.append(four_one)
 
+    case_counts = {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 4,
+        "5": 6,
+        "6": 6,
+        "I": 5,
+        "I2": 5,
+        "G": 5,
+        "G2": 5
+        }
+    
+    games = [
+        "4",
+        "5",
+        "6"
+    ]
+
+    for game in games:
+        for case in range(1, case_counts[game] + 1):
+            region_name = f"{game}-{case}"
+            if region_name in world.options.cases.value:
+                reg = Region(f"Case {region_name}", world.player, world.multiworld)
+                regions.append(reg)
     # We now need to add these regions to multiworld.regions so that AP knows about their existence.
     world.multiworld.regions += regions
 

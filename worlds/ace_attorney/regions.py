@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, List, Dict, Set
+from typing import TYPE_CHECKING, List, Dict, Set, Tuple
 
 from BaseClasses import Region
 
@@ -32,12 +32,14 @@ class RegionData:
 
 @functools.cache
 def import_regions() -> List[RegionData]:
-    return json.loads(pkgutil.get_data(__name__, REGIONS_FILE).decode("utf-8"), object_hook=lambda d: RegionData(**d))
+    data = pkgutil.get_data(__name__, REGIONS_FILE)
+    assert data is not None
+    return json.loads(data.decode("utf-8"), object_hook=lambda d: RegionData(**d))
 
 @functools.cache
-def regions_by_case() -> Dict[str, List[str]]:
+def regions_by_case() -> Tuple[Set[str], Dict[str, List[str]]]:
     region_data = import_regions()
-    cases = Set([data.case for data in region_data])
+    cases = set([data.case for data in region_data])
     regions = {case: [data.name for data in region_data if data.case == case] for case in cases}
     return cases, regions
 

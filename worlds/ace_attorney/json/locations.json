@@ -3,1378 +3,2385 @@
         "region_name": "Trial - Day 1",
         "case": "4-1",
         "locations": [
-            "Starting Evidence: Attorney's Badge",
-            "Starting Evidence: Smith's Autopsy Report",
-            "Starting Evidence: Crime Photo 1",
-            "Obtain Evidence: Deadly Bottle"
+            {
+                "name": "Starting Evidence: Attorney's Badge",
+                "id": 0
+            },
+            {
+                "name": "Starting Evidence: Smith's Autopsy Report",
+                "id": 1
+            },
+            {
+                "name": "Starting Evidence: Crime Photo 1",
+                "id": 2
+            },
+            {
+                "name": "Obtain Evidence: Deadly Bottle",
+                "id": 3
+            }
         ],
         "profile_locations": [
-            "Starting Profile: Kristoph Gavin",
-            "Starting Profile: Phoenix Wright",
-            "Starting Profile: Shadi Smith",
-            "Obtain Profile: Winston Payne"
-        ]
+            {
+                "name": "Starting Profile: Kristoph Gavin",
+                "id": 4
+            },
+            {
+                "name": "Starting Profile: Phoenix Wright",
+                "id": 5
+            },
+            {
+                "name": "Starting Profile: Shadi Smith",
+                "id": 6
+            },
+            {
+                "name": "Obtain Profile: Winston Payne",
+                "id": 7
+            }
+        ],
+        "id": 0
     },
     {
         "region_name": "Cross-Examining Phoenix Wright",
         "case": "4-1",
         "locations": [
-            "Obtain Evidence: Wright's Cell Phone",
-            "Obtain Evidence: Olga's Photo",
-            "Contradiction: The Competition"
+            {
+                "name": "Obtain Evidence: Wright's Cell Phone",
+                "id": 8
+            },
+            {
+                "name": "Obtain Evidence: Olga's Photo",
+                "id": 9
+            },
+            {
+                "name": "Contradiction: The Competition",
+                "id": 10
+            }
         ],
         "profile_locations": [
-            "Obtain Profile: Olga Orly"
-        ]
+            {
+                "name": "Obtain Profile: Olga Orly",
+                "id": 11
+            }
+        ],
+        "id": 1
     },
     {
         "region_name": "Cross-Examining Olga",
         "case": "4-1",
         "locations": [
-            "Obtain Evidence: Chips Photo",
-            "Obtain Evidence: Crime Photo 2",
-            "Contradiction: That Fateful Night (Olga)",
-            "Contradiction: That Fateful Night (Olga) 2"
+            {
+                "name": "Obtain Evidence: Chips Photo",
+                "id": 12
+            },
+            {
+                "name": "Obtain Evidence: Crime Photo 2",
+                "id": 13
+            },
+            {
+                "name": "Contradiction: That Fateful Night (Olga)",
+                "id": 14
+            },
+            {
+                "name": "Contradiction: That Fateful Night (Olga) 2",
+                "id": 15
+            }
         ],
-        "profile_locations": [
-
-        ]
+        "profile_locations": [],
+        "id": 2
     },
     {
         "region_name": "Serious Competition",
         "case": "4-1",
         "locations": [
-            "Contradiction: Serious Competition"
+            {
+                "name": "Contradiction: Serious Competition",
+                "id": 16
+            }
         ],
-        "profile_locations": [
-            
-        ]
+        "profile_locations": [],
+        "id": 3
     },
     {
         "region_name": "Olga's Big Reveal",
         "case": "4-1",
         "locations": [
-            "Obtain Evidence: Victim's Hand",
-            "Contradiction: The Final Hand"
+            {
+                "name": "Obtain Evidence: Victim's Hand",
+                "id": 17
+            },
+            {
+                "name": "Contradiction: The Final Hand",
+                "id": 18
+            }
         ],
-        "profile_locations": [
-            
-        ]
+        "profile_locations": [],
+        "id": 4
     },
     {
         "region_name": "The Trial Resumes",
         "case": "4-1",
-        "locations": [
-
-        ],
-        "profile_locations": [
-            
-        ]
+        "locations": [],
+        "profile_locations": [],
+        "id": 5
     },
     {
         "region_name": "The Best Laid Traps",
         "case": "4-1",
         "locations": [
-            "Percieve: The Best Laid Traps"
+            {
+                "name": "Percieve: The Best Laid Traps",
+                "id": 19
+            }
         ],
-        "profile_locations": [
-            
-        ]
+        "profile_locations": [],
+        "id": 6
     },
     {
         "region_name": "Appetite Before Murder",
         "case": "4-1",
         "locations": [
-            "Obtain Evidence: Bloody Ace",
-            "Contradiction: Appetite Before Murder"
+            {
+                "name": "Obtain Evidence: Bloody Ace",
+                "id": 20
+            },
+            {
+                "name": "Contradiction: Appetite Before Murder",
+                "id": 21
+            }
         ],
-        "profile_locations": [
-            
-        ]
+        "profile_locations": [],
+        "id": 7
     },
     {
         "region_name": "The Final Cross-Examination",
         "case": "4-1",
         "locations": [
-            "Contradiction: That Fateful Night (Kristoph)"
+            {
+                "name": "Contradiction: That Fateful Night (Kristoph)",
+                "id": 22
+            }
         ],
-        "profile_locations": [
-            
-        ]
+        "profile_locations": [],
+        "id": 8
     },
     {
         "region_name": "Post-Trial Wrap-Up",
         "case": "4-1",
         "locations": [
-            "Present Evidence: Bloody Ace",
-            "Finish Case: 4-1"
+            {
+                "name": "Present Evidence: Bloody Ace",
+                "id": 23
+            },
+            {
+                "name": "Finish Case: 4-1",
+                "id": 24
+            }
         ],
-        "profile_locations": [
-            
-        ]
+        "profile_locations": [],
+        "id": 9
     },
     {
         "region_name": "Investigation - Day 1",
         "case": "4-2",
         "locations": [
-            "Starting Evidence: Attorney's Badge"
+            {
+                "name": "Starting Evidence: Attorney's Badge",
+                "id": 25
+            }
         ],
         "profile_locations": [
-            "Starting Profile: Phoenix Wright"
-        ]
+            {
+                "name": "Starting Profile: Phoenix Wright",
+                "id": 26
+            }
+        ],
+        "id": 10
     },
     {
         "region_name": "Three Whole Cases!",
         "case": "4-2",
         "locations": [
-            "Obtain Evidence: Map"
+            {
+                "name": "Obtain Evidence: Map",
+                "id": 27
+            }
         ],
         "profile_locations": [
-            "Obtain Profile: Trucy Wright",
-            "Obtain Profile: Dr. Hickfield",
-            "Obtain Profile: Guy Eldoon"
-        ]
+            {
+                "name": "Obtain Profile: Trucy Wright",
+                "id": 28
+            },
+            {
+                "name": "Obtain Profile: Dr. Hickfield",
+                "id": 29
+            },
+            {
+                "name": "Obtain Profile: Guy Eldoon",
+                "id": 30
+            }
+        ],
+        "id": 11
     },
     {
         "region_name": "To The Streets!",
         "case": "4-2",
         "locations": [
-            "Obtain Evidence: Bowl",
-            "Obtain Evidence: Trucy's Evidence",
-            "Obtain Evidence: Cell Phone",
-            "Obtain Evidence: Mirror"
+            {
+                "name": "Obtain Evidence: Bowl",
+                "id": 31
+            },
+            {
+                "name": "Obtain Evidence: Trucy's Evidence",
+                "id": 32
+            },
+            {
+                "name": "Obtain Evidence: Cell Phone",
+                "id": 33
+            },
+            {
+                "name": "Obtain Evidence: Mirror",
+                "id": 34
+            }
         ],
         "profile_locations": [
-            "Obtain Profile: Plum Kitaki",
-            "Obtain Profile: Alita Tiala",
-            "Obtain Profile: Ema Skye"
-        ]
+            {
+                "name": "Obtain Profile: Plum Kitaki",
+                "id": 35
+            },
+            {
+                "name": "Obtain Profile: Alita Tiala",
+                "id": 36
+            },
+            {
+                "name": "Obtain Profile: Ema Skye",
+                "id": 37
+            }
+        ],
+        "id": 12
     },
     {
         "region_name": "A Defense Request",
         "case": "4-2",
         "locations": [
-            "Obtain Evidence: Fingerprint Powder",
-            "Obtain Evidence: Meraktis's Autopsy Report",
-            "Obtain Evidence: Knife",
-            "Obtain Evidence: Noodle Stand",
-            "Obtain Evidence: Plum's Evidence"
+            {
+                "name": "Obtain Evidence: Fingerprint Powder",
+                "id": 38
+            },
+            {
+                "name": "Obtain Evidence: Meraktis's Autopsy Report",
+                "id": 39
+            },
+            {
+                "name": "Obtain Evidence: Knife",
+                "id": 40
+            },
+            {
+                "name": "Obtain Evidence: Noodle Stand",
+                "id": 41
+            },
+            {
+                "name": "Obtain Evidence: Plum's Evidence",
+                "id": 42
+            }
         ],
         "profile_locations": [
-            "Obtain Profile: Klavier Gavin",
-            "Obtain Profile: Winfred Kitaki",
-            "Obtain Profile: Wocky Kitaki",
-            "Obtain Profile: Pal Meraktis"
-        ]
+            {
+                "name": "Obtain Profile: Klavier Gavin",
+                "id": 43
+            },
+            {
+                "name": "Obtain Profile: Winfred Kitaki",
+                "id": 44
+            },
+            {
+                "name": "Obtain Profile: Wocky Kitaki",
+                "id": 45
+            },
+            {
+                "name": "Obtain Profile: Pal Meraktis",
+                "id": 46
+            }
+        ],
+        "id": 13
     },
     {
         "region_name": "Trial - Day 1",
         "case": "4-2",
         "locations": [
-            "Obtain Evidence: Wocky's Check-Up Report"
+            {
+                "name": "Obtain Evidence: Wocky's Check-Up Report",
+                "id": 47
+            }
         ],
         "profile_locations": [
-            "Obtain Profile: Wesley Stickler"
-        ]
+            {
+                "name": "Obtain Profile: Wesley Stickler",
+                "id": 48
+            }
+        ],
+        "id": 14
     },
     {
         "region_name": "Cross-Examining Stickler",
         "case": "4-2",
         "locations": [
-            "Obtain Evidence: Pistol",
-            "Contradiction: A Night in the Park",
-            "Contradiction: A Night in the Park 2"
+            {
+                "name": "Obtain Evidence: Pistol",
+                "id": 49
+            },
+            {
+                "name": "Contradiction: A Night in the Park",
+                "id": 50
+            },
+            {
+                "name": "Contradiction: A Night in the Park 2",
+                "id": 51
+            }
         ],
-        "profile_locations": [
-            
-        ]
+        "profile_locations": [],
+        "id": 15
     },
     {
         "region_name": "In the Defendant Lobby",
         "case": "4-2",
-        "locations": [
-
-        ],
-        "profile_locations": [
-            
-        ]
+        "locations": [],
+        "profile_locations": [],
+        "id": 16
     },
     {
         "region_name": "Cornering Stickler",
         "case": "4-2",
         "locations": [
-            "Percieve: From Shot to Call",
-            "Contradiction: Stickler's \"Truth\""
+            {
+                "name": "Percieve: From Shot to Call",
+                "id": 52
+            },
+            {
+                "name": "Contradiction: Stickler's \"Truth\"",
+                "id": 53
+            }
         ],
-        "profile_locations": [
-            
-        ]
+        "profile_locations": [],
+        "id": 17
     },
     {
         "region_name": "Investigation - Day 2",
         "case": "4-2",
         "locations": [
-            "Obtain Evidence: Slippers",
-            "Obtain Evidence: Detective Skye's Orders"
+            {
+                "name": "Obtain Evidence: Slippers",
+                "id": 54
+            },
+            {
+                "name": "Obtain Evidence: Detective Skye's Orders",
+                "id": 55
+            }
         ],
-        "profile_locations": [
-            
-        ]
+        "profile_locations": [],
+        "id": 18
     },
     {
         "region_name": "The Meraktis Clinic",
         "case": "4-2",
         "locations": [
-            "Obtain Evidence: Alita's Sandles",
-            "Obtain Evidence: Lamp",
-            "Obtain Evidence: Wocky's Chart",
-            "Obtain Evidence: Bullet"
+            {
+                "name": "Obtain Evidence: Alita's Sandles",
+                "id": 56
+            },
+            {
+                "name": "Obtain Evidence: Lamp",
+                "id": 57
+            },
+            {
+                "name": "Obtain Evidence: Wocky's Chart",
+                "id": 58
+            },
+            {
+                "name": "Obtain Evidence: Bullet",
+                "id": 59
+            }
         ],
-        "profile_locations": [
-            
-        ]
+        "profile_locations": [],
+        "id": 19
     },
     {
         "region_name": "Trial - Day 2",
         "case": "4-2",
-        "locations": [
-            
-        ],
-        "profile_locations": [
-            
-        ]
+        "locations": [],
+        "profile_locations": [],
+        "id": 20
     },
     {
         "region_name": "The Final Cross-Examination",
         "case": "4-2",
         "locations": [
-            "Contradiction: Wocky's Plan",
-            "Contradiction: The Meraktis Clinic",
-            "Contradiction: The Meraktis Clinic 2"
+            {
+                "name": "Contradiction: Wocky's Plan",
+                "id": 60
+            },
+            {
+                "name": "Contradiction: The Meraktis Clinic",
+                "id": 61
+            },
+            {
+                "name": "Contradiction: The Meraktis Clinic 2",
+                "id": 62
+            }
         ],
-        "profile_locations": [
-            
-        ]
+        "profile_locations": [],
+        "id": 21
     },
     {
         "region_name": "One Last Rebuttal",
         "case": "4-2",
         "locations": [
-            "Percieve: Tiala's Explanation"
+            {
+                "name": "Percieve: Tiala's Explanation",
+                "id": 63
+            }
         ],
-        "profile_locations": [
-            
-        ]
+        "profile_locations": [],
+        "id": 22
     },
     {
         "region_name": "Post-Trial Wrap-Up",
         "case": "4-2",
         "locations": [
-            "Present: Wocky's Check-Up Report",
-            "Finish Case: 4-2"
+            {
+                "name": "Present: Wocky's Check-Up Report",
+                "id": 64
+            },
+            {
+                "name": "Finish Case: 4-2",
+                "id": 65
+            }
         ],
-        "profile_locations": [
-            
-        ]
+        "profile_locations": [],
+        "id": 23
     },
     {
         "region_name": "Investigation - Day 1",
-        "case": "4-3"
+        "case": "4-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 24
     },
     {
         "region_name": "A Backstage Murder",
-        "case": "4-3"
+        "case": "4-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 25
     },
     {
         "region_name": "The Body Vanishes",
-        "case": "4-3"
+        "case": "4-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 26
     },
     {
         "region_name": "Trial - Day 1",
-        "case": "4-3"
+        "case": "4-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 27
     },
     {
         "region_name": "Cross-Examining Ema",
-        "case": "4-3"
+        "case": "4-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 28
     },
     {
         "region_name": "Cross-Examining Lamiroir",
-        "case": "4-3"
+        "case": "4-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 29
     },
     {
         "region_name": "The Missing Body",
-        "case": "4-3"
+        "case": "4-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 30
     },
     {
         "region_name": "Lamiroir's Secret",
-        "case": "4-3"
+        "case": "4-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 31
     },
     {
         "region_name": "Investigation - Day 2",
-        "case": "4-3"
+        "case": "4-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 32
     },
     {
         "region_name": "The Legwork Begins",
-        "case": "4-3"
+        "case": "4-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 33
     },
     {
         "region_name": "Trial - Day 2",
-        "case": "4-3"
+        "case": "4-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 34
     },
     {
         "region_name": "What I Heard",
-        "case": "4-3"
+        "case": "4-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 35
     },
     {
         "region_name": "Above the Ceiling",
-        "case": "4-3"
+        "case": "4-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 36
     },
     {
         "region_name": "The Big Illusion",
-        "case": "4-3"
+        "case": "4-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 37
     },
     {
         "region_name": "The Trial Resumes",
-        "case": "4-3"
+        "case": "4-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 38
     },
     {
         "region_name": "The Final Cross-Examination",
-        "case": "4-3"
+        "case": "4-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 39
     },
     {
         "region_name": "An International Conspiracy",
-        "case": "4-3"
+        "case": "4-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 40
     },
     {
         "region_name": "Post-Trial Wrap-Up",
-        "case": "4-3"
+        "case": "4-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 41
     },
     {
         "region_name": "Investigation - Day 1",
-        "case": "4-4"
+        "case": "4-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 42
     },
     {
         "region_name": "A Severe Case of Poisoning",
-        "case": "4-4"
+        "case": "4-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 43
     },
     {
         "region_name": "Trial - Day 1",
-        "case": "4-4"
+        "case": "4-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 44
     },
     {
         "region_name": "Cross-Examining Brushel",
-        "case": "4-4"
+        "case": "4-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 45
     },
     {
         "region_name": "The Artful Forger",
-        "case": "4-4"
+        "case": "4-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 46
     },
     {
         "region_name": "The Trial Resumes",
-        "case": "4-4"
+        "case": "4-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 47
     },
     {
         "region_name": "Cross-Examining Vera",
-        "case": "4-4"
+        "case": "4-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 48
     },
     {
         "region_name": "Trial - 7 Years Ago",
-        "case": "4-4"
+        "case": "4-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 49
     },
     {
         "region_name": "Cross-Examining Gumshoe",
-        "case": "4-4"
+        "case": "4-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 50
     },
     {
         "region_name": "The Trial Resumes - 7 Years Ago",
-        "case": "4-4"
+        "case": "4-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 51
     },
     {
         "region_name": "Cross-Examining Valant",
-        "case": "4-4"
+        "case": "4-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 52
     },
     {
         "region_name": "Falsified Evidence",
-        "case": "4-4"
+        "case": "4-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 53
     },
     {
         "region_name": "The MASON System",
-        "case": "4-4"
+        "case": "4-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 54
     },
     {
         "region_name": "A Mystery Across Time",
-        "case": "4-4"
+        "case": "4-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 55
     },
     {
         "region_name": "The Secrets of Troupe Gramarye",
-        "case": "4-4"
+        "case": "4-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 56
     },
     {
         "region_name": "Trial - Day 2",
-        "case": "4-4"
+        "case": "4-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 57
     },
     {
         "region_name": "The Final Cross-Examination",
-        "case": "4-4"
+        "case": "4-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 58
     },
     {
         "region_name": "Ending",
-        "case": "4-4"
+        "case": "4-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 59
     },
     {
         "region_name": "Trial - Day 1",
-        "case": "5-1"
+        "case": "5-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 60
     },
     {
         "region_name": "The Trial Begins",
-        "case": "5-1"
+        "case": "5-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 61
     },
     {
         "region_name": "Cross-Examining Tonate",
-        "case": "5-1"
+        "case": "5-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 62
     },
     {
         "region_name": "Juniper's Mood Matrix",
-        "case": "5-1"
+        "case": "5-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 63
     },
     {
         "region_name": "Courtroom Ruins",
-        "case": "5-1"
+        "case": "5-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 64
     },
     {
         "region_name": "Trial - Day 2",
-        "case": "5-1"
+        "case": "5-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 65
     },
     {
         "region_name": "The Trial Re-Convenes",
-        "case": "5-1"
+        "case": "5-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 66
     },
     {
         "region_name": "Cross-Examining Juniper",
-        "case": "5-1"
+        "case": "5-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 67
     },
     {
         "region_name": "Decoding the Bloody Writing",
-        "case": "5-1"
+        "case": "5-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 68
     },
     {
         "region_name": "Indictment",
-        "case": "5-1"
+        "case": "5-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 69
     },
     {
         "region_name": "The Final Cross-Examination",
-        "case": "5-1"
+        "case": "5-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 70
     },
     {
         "region_name": "Post-Trial Wrap-Up",
-        "case": "5-1"
+        "case": "5-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 71
     },
     {
         "region_name": "Investigation - Day 1",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 72
     },
     {
         "region_name": "A Mysterious Murder",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 73
     },
     {
         "region_name": "The Legwork Begins",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 74
     },
     {
         "region_name": "The Fox Chamber",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 75
     },
     {
         "region_name": "Picking Fullbright's Brain",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 76
     },
     {
         "region_name": "Quesitons for Filch",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 77
     },
     {
         "region_name": "Questions for Jinxie",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 78
     },
     {
         "region_name": "Who's That Masked Man",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 79
     },
     {
         "region_name": "Trial - Day 1",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 80
     },
     {
         "region_name": "Cross-Examining Fulbright",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 81
     },
     {
         "region_name": "Cross-Examining Filch",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 82
     },
     {
         "region_name": "Jinxie's Mood Matrix",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 83
     },
     {
         "region_name": "The Great Escape Act",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 84
     },
     {
         "region_name": "Investigation - Day 2",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 85
     },
     {
         "region_name": "Interview with the Demon",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 86
     },
     {
         "region_name": "",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 87
     },
     {
         "region_name": "Quesitons for L'Belle",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 88
     },
     {
         "region_name": "Chamber Secrets",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 89
     },
     {
         "region_name": "The Truth about Posession",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 90
     },
     {
         "region_name": "A Startling Confession",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 91
     },
     {
         "region_name": "Trial - Day 2",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 92
     },
     {
         "region_name": "Cross-Examining Filch - Day 2",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 93
     },
     {
         "region_name": "Cross-Examining L'Belle",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 94
     },
     {
         "region_name": "Tenma Taro's Mood Matrix",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 95
     },
     {
         "region_name": "A Locked Room Laid Bare",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 96
     },
     {
         "region_name": "The Final Cross-Examination",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 97
     },
     {
         "region_name": "Conclusive Evidence",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 98
     },
     {
         "region_name": "Post-Trial Wrap-Up",
-        "case": "5-2"
+        "case": "5-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 99
     },
     {
         "region_name": "Investigation - Day 1",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 100
     },
     {
         "region_name": "A Body is Found",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 101
     },
     {
         "region_name": "Juniper is Arrested",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 102
     },
     {
         "region_name": "The Mock Mock Trial",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 103
     },
     {
         "region_name": "Questions, Questions",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 104
     },
     {
         "region_name": "Interview with Juniper",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 105
     },
     {
         "region_name": "Trial - Day 1",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 106
     },
     {
         "region_name": "Cross-Examining Scuttlebutt",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 107
     },
     {
         "region_name": "Cross-Examining Newman",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 108
     },
     {
         "region_name": "Cross-Examining O'Conner",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 109
     },
     {
         "region_name": "Investigation - Day 2",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 110
     },
     {
         "region_name": "The Outdoor Stage",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 111
     },
     {
         "region_name": "Questions for Scuttlebutt",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 112
     },
     {
         "region_name": "Questions for O'Conner",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 113
     },
     {
         "region_name": "The Art Room",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 114
     },
     {
         "region_name": "A Fabrication Exposed",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 115
     },
     {
         "region_name": "Figuring Out Juniper",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 116
     },
     {
         "region_name": "Trial - Day 2",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 117
     },
     {
         "region_name": "Another Way to Move a Body",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 118
     },
     {
         "region_name": "O'Conner's Mood Matrix",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 119
     },
     {
         "region_name": "A Lecture in Court",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 120
     },
     {
         "region_name": "The Final Cross-Examination",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 121
     },
     {
         "region_name": "Seeking the Truth",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 122
     },
     {
         "region_name": "Post-Trial Wrap-Up",
-        "case": "5-3"
+        "case": "5-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 123
     },
     {
         "region_name": "Trial - Day 1",
-        "case": "5-4"
+        "case": "5-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 124
     },
     {
         "region_name": "Cross-Examining Starbuck",
-        "case": "5-4"
+        "case": "5-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 125
     },
     {
         "region_name": "Investigation - Day 1",
-        "case": "5-4"
+        "case": "5-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 126
     },
     {
         "region_name": "Questions for Cosmos",
-        "case": "5-4"
+        "case": "5-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 127
     },
     {
         "region_name": "The Boarding Lounge",
-        "case": "5-4"
+        "case": "5-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 128
     },
     {
         "region_name": "Questions for Fulbright",
-        "case": "5-4"
+        "case": "5-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 129
     },
     {
         "region_name": "Investigation Report",
-        "case": "5-4"
+        "case": "5-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 130
     },
     {
         "region_name": "Apollo Breaks Away",
-        "case": "5-4"
+        "case": "5-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 131
     },
     {
         "region_name": "Trial - Day 2",
-        "case": "5-4"
+        "case": "5-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 132
     },
     {
         "region_name": "Cross-Examining Cosmos",
-        "case": "5-4"
+        "case": "5-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 133
     },
     {
         "region_name": "What Cosmos Actually Saw",
-        "case": "5-4"
+        "case": "5-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 134
     },
     {
         "region_name": "Conclusive Evidence",
-        "case": "5-4"
+        "case": "5-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 135
     },
     {
         "region_name": "Investigation - Day 1",
-        "case": "5-5"
+        "case": "5-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 136
     },
     {
         "region_name": "More Questions for Cosmos",
-        "case": "5-5"
+        "case": "5-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 137
     },
     {
         "region_name": "Lonely Office",
-        "case": "5-5"
+        "case": "5-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 138
     },
     {
         "region_name": "Hostage Crisis at the Center",
-        "case": "5-5"
+        "case": "5-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 139
     },
     {
         "region_name": "Interview with Athena",
-        "case": "5-5"
+        "case": "5-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 140
     },
     {
         "region_name": "Trial - Day 1",
-        "case": "5-5"
+        "case": "5-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 141
     },
     {
         "region_name": "Cross-Examining Ponco",
-        "case": "5-5"
+        "case": "5-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 142
     },
     {
         "region_name": "Cross-Examining Blackquill",
-        "case": "5-5"
+        "case": "5-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 143
     },
     {
         "region_name": "Memories of Seven Years Ago",
-        "case": "5-5"
+        "case": "5-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 144
     },
     {
         "region_name": "Turning my Thinking Around",
-        "case": "5-5"
+        "case": "5-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 145
     },
     {
         "region_name": "Remembering the Killer",
-        "case": "5-5"
+        "case": "5-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 146
     },
     {
         "region_name": "Cross-Examining Apollo",
-        "case": "5-5"
+        "case": "5-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 147
     },
     {
         "region_name": "The Phantom Revealed",
-        "case": "5-5"
+        "case": "5-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 148
     },
     {
         "region_name": "The Final Battle",
-        "case": "5-5"
+        "case": "5-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 149
     },
     {
         "region_name": "The Phantom's Heart",
-        "case": "5-5"
+        "case": "5-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 150
     },
     {
         "region_name": "The Denouement",
-        "case": "5-5"
+        "case": "5-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 151
     },
     {
         "region_name": "Investigation - Day 1",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 152
     },
     {
         "region_name": "How to Save an Orca",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 153
     },
     {
         "region_name": "The Legwork Begins",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 154
     },
     {
         "region_name": "A Familliar Face",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 155
     },
     {
         "region_name": "Psyche-Lock",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 156
     },
     {
         "region_name": "Proving the Case's Merit",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 157
     },
     {
         "region_name": "Trial - Day 1",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 158
     },
     {
         "region_name": "DePlume's Mood Matrix",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 159
     },
     {
         "region_name": "What Came after What?",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 160
     },
     {
         "region_name": "Cross-Examining Rimes",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 161
     },
     {
         "region_name": "Cross-Examining Buckler",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 162
     },
     {
         "region_name": "The Real Cause of Death",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 163
     },
     {
         "region_name": "Investigation - Day 2",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 164
     },
     {
         "region_name": "Calling Dr. Crab",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 165
     },
     {
         "region_name": "Revisiting the Orca Pool",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 166
     },
     {
         "region_name": "The Show Stage",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 167
     },
     {
         "region_name": "Interview with Buckler",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 168
     },
     {
         "region_name": "A Well-Kept Secret",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 169
     },
     {
         "region_name": "Trial - Day 2",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 170
     },
     {
         "region_name": "Cross-Examining Rimes - Day 2",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 171
     },
     {
         "region_name": "Rimes's Mood Matrix",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 172
     },
     {
         "region_name": "The Truth about the Past",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 173
     },
     {
         "region_name": "Cross-Examining Orla",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 174
     },
     {
         "region_name": "The Final Cross-Examination",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 175
     },
     {
         "region_name": "Double Objections",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 176
     },
     {
         "region_name": "Post-Trial Wrap-Up",
-        "case": "5-SP"
+        "case": "5-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 177
     },
     {
         "region_name": "Prologue",
-        "case": "6-1"
+        "case": "6-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 178
     },
     {
         "region_name": "Welcome to Khura'in",
-        "case": "6-1"
+        "case": "6-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 179
     },
     {
         "region_name": "A Foreign Court",
-        "case": "6-1"
+        "case": "6-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 180
     },
     {
         "region_name": "Opening Statments",
-        "case": "6-1"
+        "case": "6-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 181
     },
     {
-        "region_name": "Divination Séance",
-        "case": "6-1"
+        "region_name": "Divination S\u00e9ance",
+        "case": "6-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 182
     },
     {
         "region_name": "Insigntful Truths",
-        "case": "6-1"
+        "case": "6-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 183
     },
     {
         "region_name": "Cross-Examining Andistan'dhin",
-        "case": "6-1"
+        "case": "6-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 184
     },
     {
         "region_name": "The True Face of Andistan'dhin",
-        "case": "6-1"
+        "case": "6-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 185
     },
     {
         "region_name": "The Treasure Box's Secret",
-        "case": "6-1"
+        "case": "6-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 186
     },
     {
         "region_name": "The Final Cross-Examination",
-        "case": "6-1"
+        "case": "6-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 187
     },
     {
         "region_name": "Post-Trial Wrap-Up",
-        "case": "6-1"
+        "case": "6-1",
+        "locations": [],
+        "profile_locations": [],
+        "id": 188
     },
     {
         "region_name": "Investigation - Day 1",
-        "case": "6-2"
+        "case": "6-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 189
     },
     {
         "region_name": "A Magical Mishap",
-        "case": "6-2"
+        "case": "6-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 190
     },
     {
         "region_name": "Interview with Trucy",
-        "case": "6-2"
+        "case": "6-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 191
     },
     {
         "region_name": "The Leg Work Begins",
-        "case": "6-2"
+        "case": "6-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 192
     },
     {
         "region_name": "Questions for Bonny",
-        "case": "6-2"
+        "case": "6-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 193
     },
     {
         "region_name": "Beneath the Stage",
-        "case": "6-2"
+        "case": "6-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 194
     },
     {
         "region_name": "Crisis Close to Home",
-        "case": "6-2"
+        "case": "6-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 195
     },
     {
         "region_name": "Trial - Day 1",
-        "case": "6-2"
+        "case": "6-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 196
     },
     {
         "region_name": "Cross-Examining Ema",
-        "case": "6-2"
+        "case": "6-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 197
     },
     {
         "region_name": "Cross-Examining Bonny",
-        "case": "6-2"
+        "case": "6-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 198
     },
     {
         "region_name": "Backstage Malice",
-        "case": "6-2"
+        "case": "6-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 199
     },
     {
         "region_name": "Cross-Examining Trucy",
-        "case": "6-2"
+        "case": "6-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 200
     },
     {
         "region_name": "In the Shadow of the Footage",
-        "case": "6-2"
+        "case": "6-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 201
     },
     {
         "region_name": "Cross-Examining Retinz",
-        "case": "6-2"
+        "case": "6-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 202
     },
     {
         "region_name": "The Real Culprit",
-        "case": "6-2"
+        "case": "6-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 203
     },
     {
         "region_name": "The Final Cross-Examination",
-        "case": "6-2"
+        "case": "6-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 204
     },
     {
         "region_name": "The Truth Revealed",
-        "case": "6-2"
+        "case": "6-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 205
     },
     {
         "region_name": "Conclusive Evidence",
-        "case": "6-2"
+        "case": "6-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 206
     },
     {
         "region_name": "Post-Trial Wrap-Up",
-        "case": "6-2"
+        "case": "6-2",
+        "locations": [],
+        "profile_locations": [],
+        "id": 207
     },
     {
         "region_name": "Investigation - Day 1",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 208
     },
     {
         "region_name": "A Slaying in the Sanctum",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 209
     },
     {
         "region_name": "The Inner Sanctum",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 210
     },
     {
         "region_name": "Questions for a Peculiar Man",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 211
     },
     {
         "region_name": "The High Priest's House",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 212
     },
     {
         "region_name": "The Queen and the Minister",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 213
     },
     {
         "region_name": "Interview with Maya",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 214
     },
     {
         "region_name": "Trial - Day 1",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 215
     },
     {
-        "region_name": "Divination Séance",
-        "case": "6-3"
+        "region_name": "Divination S\u00e9ance",
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 216
     },
     {
         "region_name": "Cross-Examining Ihmus",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 217
     },
     {
         "region_name": "Ihmus's Whereabouts",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 218
     },
     {
         "region_name": "The Third Party",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 219
     },
     {
         "region_name": "Investigation - Day 2",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 220
     },
     {
         "region_name": "Interview with Maya - Day 2",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 221
     },
     {
         "region_name": "Hey, Datz Are'bal",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 222
     },
     {
         "region_name": "Locating the Hideout",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 223
     },
     {
         "region_name": "The Rebel Hideout",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 224
     },
     {
         "region_name": "Trial - Day 2",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 225
     },
     {
         "region_name": "Cross-Examining Ema",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 226
     },
     {
-        "region_name": "Divination Séance - Day 2",
-        "case": "6-3"
+        "region_name": "Divination S\u00e9ance - Day 2",
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 227
     },
     {
         "region_name": "A Short Recess",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 228
     },
     {
         "region_name": "The Final Cross-Examination",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 229
     },
     {
         "region_name": "The Truth Revealed",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 230
     },
     {
         "region_name": "Post-Trial Wrap-Up",
-        "case": "6-3"
+        "case": "6-3",
+        "locations": [],
+        "profile_locations": [],
+        "id": 231
     },
     {
         "region_name": "Trial - Day 1",
-        "case": "6-4"
+        "case": "6-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 232
     },
     {
         "region_name": "Cross-Examining Simon",
-        "case": "6-4"
+        "case": "6-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 233
     },
     {
         "region_name": "Cross-Examining Geiru",
-        "case": "6-4"
+        "case": "6-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 234
     },
     {
         "region_name": "Cross-Examining Uendo",
-        "case": "6-4"
+        "case": "6-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 235
     },
     {
         "region_name": "Uendo's Mood Matrix",
-        "case": "6-4"
+        "case": "6-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 236
     },
     {
         "region_name": "The Fourth One",
-        "case": "6-4"
+        "case": "6-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 237
     },
     {
         "region_name": "The Final Cross-Examination",
-        "case": "6-4"
+        "case": "6-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 238
     },
     {
         "region_name": "Conclusive Evidence",
-        "case": "6-4"
+        "case": "6-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 239
     },
     {
         "region_name": "Post-Trial Wrap-Up",
-        "case": "6-4"
+        "case": "6-4",
+        "locations": [],
+        "profile_locations": [],
+        "id": 240
     },
     {
         "region_name": "Investigation - Day 1",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 241
     },
     {
         "region_name": "The Doctor's Study",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 242
     },
     {
         "region_name": "The Treasure Hunt Begins",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 243
     },
     {
         "region_name": "Quesitons for Pearl",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 244
     },
     {
         "region_name": "The Caves of Mt. Mitama",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 245
     },
     {
         "region_name": "A Surprising Reunion",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 246
     },
     {
         "region_name": "Trial - Day 1",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 247
     },
     {
         "region_name": "Cross-Examining Ema",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 248
     },
     {
         "region_name": "Cross-Examining Atishon",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 249
     },
     {
         "region_name": "Cross-Examining Sarge",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 250
     },
     {
         "region_name": "The Final Cross-Examination",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 251
     },
     {
         "region_name": "The Founder's Orb's Secret",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 252
     },
     {
         "region_name": "Post-Trial Wrap-Up",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 274
     },
     {
         "region_name": "Investigation - Day 2",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 254
     },
     {
         "region_name": "There's Been a Murder",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 255
     },
     {
         "region_name": "Interview with Dhurke",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 256
     },
     {
         "region_name": "Amara's Tomb",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 257
     },
     {
         "region_name": "Phoenix and Edeworth",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 258
     },
     {
         "region_name": "Rayfa the Investigator",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 259
     },
     {
         "region_name": "Apollo's Narrow Escape",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 260
     },
     {
         "region_name": "Dhurke's Confession",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 261
     },
     {
         "region_name": "Power to the People",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 262
     },
     {
         "region_name": "Trial - Day 2",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 263
     },
     {
         "region_name": "Cross-Examining Dhurke",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 264
     },
     {
         "region_name": "Cross-Examining Rayfa",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 265
     },
     {
-        "region_name": "Divination Séance",
-        "case": "6-5"
+        "region_name": "Divination S\u00e9ance",
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 266
     },
     {
         "region_name": "Cross-Examining Maya",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 267
     },
     {
         "region_name": "A New Witness",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 268
     },
     {
         "region_name": "A Cruel Truth",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 269
     },
     {
         "region_name": "Beyond Despair",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 270
     },
     {
         "region_name": "The Truth Comes Out",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 271
     },
     {
         "region_name": "23-Year-Old Truth",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 272
     },
     {
         "region_name": "Revolutionary Truth",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 273
     },
     {
         "region_name": "Post-Trial Wrap-Up",
-        "case": "6-5"
+        "case": "6-5",
+        "locations": [],
+        "profile_locations": [],
+        "id": 274
     },
     {
         "region_name": "Investigation - Day 1",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 275
     },
     {
         "region_name": "The Reception Hall",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 291
     },
     {
         "region_name": "Questions for Pierce",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 290
     },
     {
         "region_name": "Chasing After the Butz",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 278
     },
     {
         "region_name": "Interview with Ellen",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 279
     },
     {
         "region_name": "Trial - Day 1",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 280
     },
     {
         "region_name": "Cross-Examining Ema",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 281
     },
     {
         "region_name": "The Prosecution's Argument",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 282
     },
     {
         "region_name": "Cross-Examining Larry",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 283
     },
     {
         "region_name": "What Larry Got Up To",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 284
     },
     {
         "region_name": "Time Travel is Real",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 285
     },
     {
         "region_name": "The Truth about Time Travel",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 286
     },
     {
         "region_name": "Investigation - Day 2",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 287
     },
     {
         "region_name": "The Hold",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 288
     },
     {
         "region_name": "Questions for Sorin",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 289
     },
     {
         "region_name": "Questions for Pierce",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 290
     },
     {
         "region_name": "The Reception Hall",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 291
     },
     {
         "region_name": "Trial - Day 2",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 292
     },
     {
         "region_name": "Cross-Examining Sorin",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 293
     },
     {
         "region_name": "Secrets Unveiled",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 294
     },
     {
         "region_name": "Cross-Examining Pierce",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 295
     },
     {
         "region_name": "The Final Cross-Examination",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 296
     },
     {
         "region_name": "The Truth Activated",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 297
     },
     {
         "region_name": "Post-Trial Wrap-Up",
-        "case": "6-SP"
+        "case": "6-SP",
+        "locations": [],
+        "profile_locations": [],
+        "id": 298
     }
 ]

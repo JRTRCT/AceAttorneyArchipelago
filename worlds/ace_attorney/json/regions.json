@@ -440,1063 +440,1058 @@
         "id": 87
     },
     {
-        "name": "",
+        "name": "Quesitons for L'Belle",
         "case": "5-2",
         "id": 88
     },
     {
-        "name": "Quesitons for L'Belle",
+        "name": "Chamber Secrets",
         "case": "5-2",
         "id": 89
     },
     {
-        "name": "Chamber Secrets",
+        "name": "The Truth about Posession",
         "case": "5-2",
         "id": 90
     },
     {
-        "name": "The Truth about Posession",
+        "name": "A Startling Confession",
         "case": "5-2",
         "id": 91
     },
     {
-        "name": "A Startling Confession",
+        "name": "Trial - Day 2",
         "case": "5-2",
         "id": 92
     },
     {
-        "name": "Trial - Day 2",
+        "name": "Cross-Examining Filch - Day 2",
         "case": "5-2",
         "id": 93
     },
     {
-        "name": "Cross-Examining Filch - Day 2",
+        "name": "Cross-Examining L'Belle",
         "case": "5-2",
         "id": 94
     },
     {
-        "name": "Cross-Examining L'Belle",
+        "name": "Tenma Taro's Mood Matrix",
         "case": "5-2",
         "id": 95
     },
     {
-        "name": "Tenma Taro's Mood Matrix",
+        "name": "A Locked Room Laid Bare",
         "case": "5-2",
         "id": 96
     },
     {
-        "name": "A Locked Room Laid Bare",
+        "name": "The Final Cross-Examination",
         "case": "5-2",
         "id": 97
     },
     {
-        "name": "The Final Cross-Examination",
+        "name": "Conclusive Evidence",
         "case": "5-2",
         "id": 98
     },
     {
-        "name": "Conclusive Evidence",
+        "name": "Post-Trial Wrap-Up",
         "case": "5-2",
         "id": 99
     },
     {
-        "name": "Post-Trial Wrap-Up",
-        "case": "5-2",
-        "id": 100
-    },
-    {
         "name": "Investigation - Day 1",
         "case": "5-3",
-        "id": 101
+        "id": 100
     },
     {
         "name": "A Body is Found",
         "case": "5-3",
-        "id": 102
+        "id": 101
     },
     {
         "name": "Juniper is Arrested",
         "case": "5-3",
-        "id": 103
+        "id": 102
     },
     {
         "name": "The Mock Mock Trial",
         "case": "5-3",
-        "id": 104
+        "id": 103
     },
     {
         "name": "Questions, Questions",
         "case": "5-3",
-        "id": 105
+        "id": 104
     },
     {
         "name": "Interview with Juniper",
         "case": "5-3",
-        "id": 106
+        "id": 105
     },
     {
         "name": "Trial - Day 1",
         "case": "5-3",
-        "id": 107
+        "id": 106
     },
     {
         "name": "Cross-Examining Scuttlebutt",
         "case": "5-3",
-        "id": 108
+        "id": 107
     },
     {
         "name": "Cross-Examining Newman",
         "case": "5-3",
-        "id": 109
+        "id": 108
     },
     {
         "name": "Cross-Examining O'Conner",
         "case": "5-3",
-        "id": 110
+        "id": 109
     },
     {
         "name": "Investigation - Day 2",
         "case": "5-3",
-        "id": 111
+        "id": 110
     },
     {
         "name": "The Outdoor Stage",
         "case": "5-3",
-        "id": 112
+        "id": 111
     },
     {
         "name": "Questions for Scuttlebutt",
         "case": "5-3",
-        "id": 113
+        "id": 112
     },
     {
         "name": "Questions for O'Conner",
         "case": "5-3",
-        "id": 114
+        "id": 113
     },
     {
         "name": "The Art Room",
         "case": "5-3",
-        "id": 115
+        "id": 114
     },
     {
         "name": "A Fabrication Exposed",
         "case": "5-3",
-        "id": 116
+        "id": 115
     },
     {
         "name": "Figuring Out Juniper",
         "case": "5-3",
-        "id": 117
+        "id": 116
     },
     {
         "name": "Trial - Day 2",
         "case": "5-3",
-        "id": 118
+        "id": 117
     },
     {
         "name": "Another Way to Move a Body",
         "case": "5-3",
-        "id": 119
+        "id": 118
     },
     {
         "name": "O'Conner's Mood Matrix",
         "case": "5-3",
-        "id": 120
+        "id": 119
     },
     {
         "name": "A Lecture in Court",
         "case": "5-3",
-        "id": 121
+        "id": 120
     },
     {
         "name": "The Final Cross-Examination",
         "case": "5-3",
-        "id": 122
+        "id": 121
     },
     {
         "name": "Seeking the Truth",
         "case": "5-3",
-        "id": 123
+        "id": 122
     },
     {
         "name": "Post-Trial Wrap-Up",
         "case": "5-3",
-        "id": 124
+        "id": 123
     },
     {
         "name": "Trial - Day 1",
         "case": "5-4",
-        "id": 125
+        "id": 124
     },
     {
         "name": "Cross-Examining Starbuck",
         "case": "5-4",
-        "id": 126
+        "id": 125
     },
     {
         "name": "Investigation - Day 1",
         "case": "5-4",
-        "id": 127
+        "id": 126
     },
     {
         "name": "Questions for Cosmos",
         "case": "5-4",
-        "id": 128
+        "id": 127
     },
     {
         "name": "The Boarding Lounge",
         "case": "5-4",
-        "id": 129
+        "id": 128
     },
     {
         "name": "Questions for Fulbright",
         "case": "5-4",
-        "id": 130
+        "id": 129
     },
     {
         "name": "Investigation Report",
         "case": "5-4",
-        "id": 131
+        "id": 130
     },
     {
         "name": "Apollo Breaks Away",
         "case": "5-4",
-        "id": 132
+        "id": 131
     },
     {
         "name": "Trial - Day 2",
         "case": "5-4",
-        "id": 133
+        "id": 132
     },
     {
         "name": "Cross-Examining Cosmos",
         "case": "5-4",
-        "id": 134
+        "id": 133
     },
     {
         "name": "What Cosmos Actually Saw",
         "case": "5-4",
-        "id": 135
+        "id": 134
     },
     {
         "name": "Conclusive Evidence",
         "case": "5-4",
-        "id": 136
+        "id": 135
     },
     {
         "name": "Investigation - Day 1",
         "case": "5-5",
-        "id": 137
+        "id": 136
     },
     {
         "name": "More Questions for Cosmos",
         "case": "5-5",
-        "id": 138
+        "id": 137
     },
     {
         "name": "Lonely Office",
         "case": "5-5",
-        "id": 139
+        "id": 138
     },
     {
         "name": "Hostage Crisis at the Center",
         "case": "5-5",
-        "id": 140
+        "id": 139
     },
     {
         "name": "Interview with Athena",
         "case": "5-5",
-        "id": 141
+        "id": 140
     },
     {
         "name": "Trial - Day 1",
         "case": "5-5",
-        "id": 142
+        "id": 141
     },
     {
         "name": "Cross-Examining Ponco",
         "case": "5-5",
-        "id": 143
+        "id": 142
     },
     {
         "name": "Cross-Examining Blackquill",
         "case": "5-5",
-        "id": 144
+        "id": 143
     },
     {
         "name": "Memories of Seven Years Ago",
         "case": "5-5",
-        "id": 145
+        "id": 144
     },
     {
         "name": "Turning my Thinking Around",
         "case": "5-5",
-        "id": 146
+        "id": 145
     },
     {
         "name": "Remembering the Killer",
         "case": "5-5",
-        "id": 147
+        "id": 146
     },
     {
         "name": "Cross-Examining Apollo",
         "case": "5-5",
-        "id": 148
+        "id": 147
     },
     {
         "name": "The Phantom Revealed",
         "case": "5-5",
-        "id": 149
+        "id": 148
     },
     {
         "name": "The Final Battle",
         "case": "5-5",
-        "id": 150
+        "id": 149
     },
     {
         "name": "The Phantom's Heart",
         "case": "5-5",
-        "id": 151
+        "id": 150
     },
     {
         "name": "The Denouement",
         "case": "5-5",
-        "id": 152
+        "id": 151
     },
     {
         "name": "Investigation - Day 1",
         "case": "5-SP",
-        "id": 153
+        "id": 152
     },
     {
         "name": "How to Save an Orca",
         "case": "5-SP",
-        "id": 154
+        "id": 153
     },
     {
         "name": "The Legwork Begins",
         "case": "5-SP",
-        "id": 155
+        "id": 154
     },
     {
         "name": "A Familliar Face",
         "case": "5-SP",
-        "id": 156
+        "id": 155
     },
     {
         "name": "Psyche-Lock",
         "case": "5-SP",
-        "id": 157
+        "id": 156
     },
     {
         "name": "Proving the Case's Merit",
         "case": "5-SP",
-        "id": 158
+        "id": 157
     },
     {
         "name": "Trial - Day 1",
         "case": "5-SP",
-        "id": 159
+        "id": 158
     },
     {
         "name": "DePlume's Mood Matrix",
         "case": "5-SP",
-        "id": 160
+        "id": 159
     },
     {
         "name": "What Came after What?",
         "case": "5-SP",
-        "id": 161
+        "id": 160
     },
     {
         "name": "Cross-Examining Rimes",
         "case": "5-SP",
-        "id": 162
+        "id": 161
     },
     {
         "name": "Cross-Examining Buckler",
         "case": "5-SP",
-        "id": 163
+        "id": 162
     },
     {
         "name": "The Real Cause of Death",
         "case": "5-SP",
-        "id": 164
+        "id": 163
     },
     {
         "name": "Investigation - Day 2",
         "case": "5-SP",
-        "id": 165
+        "id": 164
     },
     {
         "name": "Calling Dr. Crab",
         "case": "5-SP",
-        "id": 166
+        "id": 165
     },
     {
         "name": "Revisiting the Orca Pool",
         "case": "5-SP",
-        "id": 167
+        "id": 166
     },
     {
         "name": "The Show Stage",
         "case": "5-SP",
-        "id": 168
+        "id": 167
     },
     {
         "name": "Interview with Buckler",
         "case": "5-SP",
-        "id": 169
+        "id": 168
     },
     {
         "name": "A Well-Kept Secret",
         "case": "5-SP",
-        "id": 170
+        "id": 169
     },
     {
         "name": "Trial - Day 2",
         "case": "5-SP",
-        "id": 171
+        "id": 170
     },
     {
         "name": "Cross-Examining Rimes - Day 2",
         "case": "5-SP",
-        "id": 172
+        "id": 171
     },
     {
         "name": "Rimes's Mood Matrix",
         "case": "5-SP",
-        "id": 173
+        "id": 172
     },
     {
         "name": "The Truth about the Past",
         "case": "5-SP",
-        "id": 174
+        "id": 173
     },
     {
         "name": "Cross-Examining Orla",
         "case": "5-SP",
-        "id": 175
+        "id": 174
     },
     {
         "name": "The Final Cross-Examination",
         "case": "5-SP",
-        "id": 176
+        "id": 175
     },
     {
         "name": "Double Objections",
         "case": "5-SP",
-        "id": 177
+        "id": 176
     },
     {
         "name": "Post-Trial Wrap-Up",
         "case": "5-SP",
-        "id": 178
+        "id": 177
     },
     {
         "name": "Prologue",
         "case": "6-1",
-        "id": 179
+        "id": 178
     },
     {
         "name": "Welcome to Khura'in",
         "case": "6-1",
-        "id": 180
+        "id": 179
     },
     {
         "name": "A Foreign Court",
         "case": "6-1",
-        "id": 181
+        "id": 180
     },
     {
         "name": "Opening Statments",
         "case": "6-1",
-        "id": 182
+        "id": 181
     },
     {
         "name": "Divination S\u00e9ance",
         "case": "6-1",
-        "id": 183
+        "id": 182
     },
     {
         "name": "Insigntful Truths",
         "case": "6-1",
-        "id": 184
+        "id": 183
     },
     {
         "name": "Cross-Examining Andistan'dhin",
         "case": "6-1",
-        "id": 185
+        "id": 184
     },
     {
         "name": "The True Face of Andistan'dhin",
         "case": "6-1",
-        "id": 186
+        "id": 185
     },
     {
         "name": "The Treasure Box's Secret",
         "case": "6-1",
-        "id": 187
+        "id": 186
     },
     {
         "name": "The Final Cross-Examination",
+        "case": "6-1",
+        "id": 187
+    },
+    {
+        "name": "Post-Trial Wrap-Up",
         "case": "6-1",
         "id": 188
     },
     {
-        "name": "Post-Trial Wrap-Up",
-        "case": "6-1",
-        "id": 189
-    },
-    {
         "name": "Investigation - Day 1",
         "case": "6-2",
-        "id": 190
+        "id": 189
     },
     {
         "name": "A Magical Mishap",
         "case": "6-2",
-        "id": 191
+        "id": 190
     },
     {
         "name": "Interview with Trucy",
         "case": "6-2",
-        "id": 192
+        "id": 191
     },
     {
         "name": "The Leg Work Begins",
         "case": "6-2",
-        "id": 193
+        "id": 192
     },
     {
         "name": "Questions for Bonny",
         "case": "6-2",
-        "id": 194
+        "id": 193
     },
     {
         "name": "Beneath the Stage",
         "case": "6-2",
-        "id": 195
+        "id": 194
     },
     {
         "name": "Crisis Close to Home",
         "case": "6-2",
-        "id": 196
+        "id": 195
     },
     {
         "name": "Trial - Day 1",
+        "case": "6-2",
+        "id": 196
+    },
+    {
+        "name": "Cross-Examining Ema",
         "case": "6-2",
         "id": 197
     },
     {
-        "name": "Cross-Examining Ema",
+        "name": "Cross-Examining Bonny",
         "case": "6-2",
         "id": 198
     },
     {
-        "name": "Cross-Examining Bonny",
+        "name": "Backstage Malice",
         "case": "6-2",
         "id": 199
     },
     {
-        "name": "Backstage Malice",
+        "name": "Cross-Examining Trucy",
         "case": "6-2",
         "id": 200
     },
     {
-        "name": "Cross-Examining Trucy",
+        "name": "In the Shadow of the Footage",
         "case": "6-2",
         "id": 201
     },
     {
-        "name": "In the Shadow of the Footage",
+        "name": "Cross-Examining Retinz",
         "case": "6-2",
         "id": 202
     },
     {
-        "name": "Cross-Examining Retinz",
+        "name": "The Real Culprit",
         "case": "6-2",
         "id": 203
     },
     {
-        "name": "The Real Culprit",
+        "name": "The Final Cross-Examination",
         "case": "6-2",
         "id": 204
     },
     {
-        "name": "The Final Cross-Examination",
+        "name": "The Truth Revealed",
         "case": "6-2",
         "id": 205
     },
     {
-        "name": "The Truth Revealed",
+        "name": "Conclusive Evidence",
         "case": "6-2",
         "id": 206
     },
     {
-        "name": "Conclusive Evidence",
+        "name": "Post-Trial Wrap-Up",
         "case": "6-2",
         "id": 207
     },
     {
-        "name": "Post-Trial Wrap-Up",
-        "case": "6-2",
-        "id": 208
-    },
-    {
         "name": "Investigation - Day 1",
         "case": "6-3",
-        "id": 209
+        "id": 208
     },
     {
         "name": "A Slaying in the Sanctum",
         "case": "6-3",
-        "id": 210
+        "id": 209
     },
     {
         "name": "The Inner Sanctum",
         "case": "6-3",
-        "id": 211
+        "id": 210
     },
     {
         "name": "Questions for a Peculiar Man",
         "case": "6-3",
-        "id": 212
+        "id": 211
     },
     {
         "name": "The High Priest's House",
         "case": "6-3",
-        "id": 213
+        "id": 212
     },
     {
         "name": "The Queen and the Minister",
         "case": "6-3",
-        "id": 214
+        "id": 213
     },
     {
         "name": "Interview with Maya",
         "case": "6-3",
-        "id": 215
+        "id": 214
     },
     {
         "name": "Trial - Day 1",
+        "case": "6-3",
+        "id": 215
+    },
+    {
+        "name": "Divination S\u00e9ance",
         "case": "6-3",
         "id": 216
     },
     {
-        "name": "Divination S\u00e9ance",
+        "name": "Cross-Examining Ihmus",
         "case": "6-3",
         "id": 217
     },
     {
-        "name": "Cross-Examining Ihmus",
+        "name": "Ihmus's Whereabouts",
         "case": "6-3",
         "id": 218
     },
     {
-        "name": "Ihmus's Whereabouts",
+        "name": "The Third Party",
         "case": "6-3",
         "id": 219
     },
     {
-        "name": "The Third Party",
+        "name": "Investigation - Day 2",
         "case": "6-3",
         "id": 220
     },
     {
-        "name": "Investigation - Day 2",
+        "name": "Interview with Maya - Day 2",
         "case": "6-3",
         "id": 221
     },
     {
-        "name": "Interview with Maya - Day 2",
+        "name": "Hey, Datz Are'bal",
         "case": "6-3",
         "id": 222
     },
     {
-        "name": "Hey, Datz Are'bal",
+        "name": "Locating the Hideout",
         "case": "6-3",
         "id": 223
     },
     {
-        "name": "Locating the Hideout",
+        "name": "The Rebel Hideout",
         "case": "6-3",
         "id": 224
     },
     {
-        "name": "The Rebel Hideout",
+        "name": "Trial - Day 2",
         "case": "6-3",
         "id": 225
     },
     {
-        "name": "Trial - Day 2",
+        "name": "Cross-Examining Ema",
         "case": "6-3",
         "id": 226
     },
     {
-        "name": "Cross-Examining Ema",
+        "name": "Divination S\u00e9ance - Day 2",
         "case": "6-3",
         "id": 227
     },
     {
-        "name": "Divination S\u00e9ance - Day 2",
+        "name": "A Short Recess",
         "case": "6-3",
         "id": 228
     },
     {
-        "name": "A Short Recess",
+        "name": "The Final Cross-Examination",
         "case": "6-3",
         "id": 229
     },
     {
-        "name": "The Final Cross-Examination",
+        "name": "The Truth Revealed",
         "case": "6-3",
         "id": 230
     },
     {
-        "name": "The Truth Revealed",
+        "name": "Post-Trial Wrap-Up",
         "case": "6-3",
         "id": 231
     },
     {
-        "name": "Post-Trial Wrap-Up",
-        "case": "6-3",
-        "id": 232
-    },
-    {
         "name": "Trial - Day 1",
         "case": "6-4",
-        "id": 233
+        "id": 232
     },
     {
         "name": "Cross-Examining Simon",
         "case": "6-4",
-        "id": 234
+        "id": 233
     },
     {
         "name": "Cross-Examining Geiru",
         "case": "6-4",
-        "id": 235
+        "id": 234
     },
     {
         "name": "Cross-Examining Uendo",
         "case": "6-4",
-        "id": 236
+        "id": 235
     },
     {
         "name": "Uendo's Mood Matrix",
         "case": "6-4",
-        "id": 237
+        "id": 236
     },
     {
         "name": "The Fourth One",
         "case": "6-4",
-        "id": 238
+        "id": 237
     },
     {
         "name": "The Final Cross-Examination",
         "case": "6-4",
-        "id": 239
+        "id": 238
     },
     {
         "name": "Conclusive Evidence",
         "case": "6-4",
-        "id": 240
+        "id": 239
     },
     {
         "name": "Post-Trial Wrap-Up",
         "case": "6-4",
-        "id": 241
+        "id": 240
     },
     {
         "name": "Investigation - Day 1",
         "case": "6-5",
-        "id": 242
+        "id": 241
     },
     {
         "name": "The Doctor's Study",
         "case": "6-5",
-        "id": 243
+        "id": 242
     },
     {
         "name": "The Treasure Hunt Begins",
         "case": "6-5",
-        "id": 244
+        "id": 243
     },
     {
         "name": "Quesitons for Pearl",
         "case": "6-5",
-        "id": 245
+        "id": 244
     },
     {
         "name": "The Caves of Mt. Mitama",
         "case": "6-5",
-        "id": 246
+        "id": 245
     },
     {
         "name": "A Surprising Reunion",
         "case": "6-5",
-        "id": 247
+        "id": 246
     },
     {
         "name": "Trial - Day 1",
+        "case": "6-5",
+        "id": 247
+    },
+    {
+        "name": "Cross-Examining Ema",
         "case": "6-5",
         "id": 248
     },
     {
-        "name": "Cross-Examining Ema",
+        "name": "Cross-Examining Atishon",
         "case": "6-5",
         "id": 249
     },
     {
-        "name": "Cross-Examining Atishon",
+        "name": "Cross-Examining Sarge",
         "case": "6-5",
         "id": 250
     },
     {
-        "name": "Cross-Examining Sarge",
+        "name": "The Final Cross-Examination",
         "case": "6-5",
         "id": 251
     },
     {
-        "name": "The Final Cross-Examination",
+        "name": "The Founder's Orb's Secret",
         "case": "6-5",
         "id": 252
     },
     {
-        "name": "The Founder's Orb's Secret",
+        "name": "Post-Trial Wrap-Up",
         "case": "6-5",
         "id": 253
     },
     {
-        "name": "Post-Trial Wrap-Up",
+        "name": "Investigation - Day 2",
         "case": "6-5",
         "id": 254
     },
     {
-        "name": "Investigation - Day 2",
+        "name": "There's Been a Murder",
         "case": "6-5",
         "id": 255
     },
     {
-        "name": "There's Been a Murder",
+        "name": "Interview with Dhurke",
         "case": "6-5",
         "id": 256
     },
     {
-        "name": "Interview with Dhurke",
+        "name": "Amara's Tomb",
         "case": "6-5",
         "id": 257
     },
     {
-        "name": "Amara's Tomb",
+        "name": "Phoenix and Edeworth",
         "case": "6-5",
         "id": 258
     },
     {
-        "name": "Phoenix and Edeworth",
+        "name": "Rayfa the Investigator",
         "case": "6-5",
         "id": 259
     },
     {
-        "name": "Rayfa the Investigator",
+        "name": "Apollo's Narrow Escape",
         "case": "6-5",
         "id": 260
     },
     {
-        "name": "Apollo's Narrow Escape",
+        "name": "Dhurke's Confession",
         "case": "6-5",
         "id": 261
     },
     {
-        "name": "Dhurke's Confession",
+        "name": "Power to the People",
         "case": "6-5",
         "id": 262
     },
     {
-        "name": "Power to the People",
+        "name": "Trial - Day 2",
         "case": "6-5",
         "id": 263
     },
     {
-        "name": "Trial - Day 2",
+        "name": "Cross-Examining Dhurke",
         "case": "6-5",
         "id": 264
     },
     {
-        "name": "Cross-Examining Dhurke",
+        "name": "Cross-Examining Rayfa",
         "case": "6-5",
         "id": 265
     },
     {
-        "name": "Cross-Examining Rayfa",
+        "name": "Divination S\u00e9ance",
         "case": "6-5",
         "id": 266
     },
     {
-        "name": "Divination S\u00e9ance",
+        "name": "Cross-Examining Maya",
         "case": "6-5",
         "id": 267
     },
     {
-        "name": "Cross-Examining Maya",
+        "name": "A New Witness",
         "case": "6-5",
         "id": 268
     },
     {
-        "name": "A New Witness",
+        "name": "A Cruel Truth",
         "case": "6-5",
         "id": 269
     },
     {
-        "name": "A Cruel Truth",
+        "name": "Beyond Despair",
         "case": "6-5",
         "id": 270
     },
     {
-        "name": "Beyond Despair",
+        "name": "The Truth Comes Out",
         "case": "6-5",
         "id": 271
     },
     {
-        "name": "The Truth Comes Out",
+        "name": "23-Year-Old Truth",
         "case": "6-5",
         "id": 272
     },
     {
-        "name": "23-Year-Old Truth",
+        "name": "Revolutionary Truth",
         "case": "6-5",
         "id": 273
     },
     {
-        "name": "Revolutionary Truth",
+        "name": "Post-Trial Wrap-Up",
         "case": "6-5",
         "id": 274
     },
     {
-        "name": "Post-Trial Wrap-Up",
-        "case": "6-5",
+        "name": "Investigation - Day 1",
+        "case": "6-SP",
         "id": 275
     },
     {
-        "name": "Investigation - Day 1",
+        "name": "The Reception Hall",
         "case": "6-SP",
         "id": 276
     },
     {
-        "name": "The Reception Hall",
+        "name": "Questions for Pierce",
         "case": "6-SP",
         "id": 277
     },
     {
-        "name": "Questions for Pierce",
+        "name": "Chasing After the Butz",
         "case": "6-SP",
         "id": 278
     },
     {
-        "name": "Chasing After the Butz",
+        "name": "Interview with Ellen",
         "case": "6-SP",
         "id": 279
     },
     {
-        "name": "Interview with Ellen",
+        "name": "Trial - Day 1",
         "case": "6-SP",
         "id": 280
     },
     {
-        "name": "Trial - Day 1",
+        "name": "Cross-Examining Ema",
         "case": "6-SP",
         "id": 281
     },
     {
-        "name": "Cross-Examining Ema",
+        "name": "The Prosecution's Argument",
         "case": "6-SP",
         "id": 282
     },
     {
-        "name": "The Prosecution's Argument",
+        "name": "Cross-Examining Larry",
         "case": "6-SP",
         "id": 283
     },
     {
-        "name": "Cross-Examining Larry",
+        "name": "What Larry Got Up To",
         "case": "6-SP",
         "id": 284
     },
     {
-        "name": "What Larry Got Up To",
+        "name": "Time Travel is Real",
         "case": "6-SP",
         "id": 285
     },
     {
-        "name": "Time Travel is Real",
+        "name": "The Truth about Time Travel",
         "case": "6-SP",
         "id": 286
     },
     {
-        "name": "The Truth about Time Travel",
+        "name": "Investigation - Day 2",
         "case": "6-SP",
         "id": 287
     },
     {
-        "name": "Investigation - Day 2",
+        "name": "The Hold",
         "case": "6-SP",
         "id": 288
     },
     {
-        "name": "The Hold",
+        "name": "Questions for Sorin",
         "case": "6-SP",
         "id": 289
     },
     {
-        "name": "Questions for Sorin",
+        "name": "Questions for Pierce",
         "case": "6-SP",
         "id": 290
     },
     {
-        "name": "Questions for Pierce",
+        "name": "The Reception Hall",
         "case": "6-SP",
         "id": 291
     },
     {
-        "name": "The Reception Hall",
+        "name": "Trial - Day 2",
         "case": "6-SP",
         "id": 292
     },
     {
-        "name": "Trial - Day 2",
+        "name": "Cross-Examining Sorin",
         "case": "6-SP",
         "id": 293
     },
     {
-        "name": "Cross-Examining Sorin",
+        "name": "Secrets Unveiled",
         "case": "6-SP",
         "id": 294
     },
     {
-        "name": "Secrets Unveiled",
+        "name": "Cross-Examining Pierce",
         "case": "6-SP",
         "id": 295
     },
     {
-        "name": "Cross-Examining Pierce",
+        "name": "The Final Cross-Examination",
         "case": "6-SP",
         "id": 296
     },
     {
-        "name": "The Final Cross-Examination",
+        "name": "The Truth Activated",
         "case": "6-SP",
         "id": 297
     },
     {
-        "name": "The Truth Activated",
-        "case": "6-SP",
-        "id": 298
-    },
-    {
         "name": "Post-Trial Wrap-Up",
         "case": "6-SP",
-        "id": 299
+        "id": 298
     }
 ]

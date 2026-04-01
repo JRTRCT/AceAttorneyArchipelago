@@ -25,10 +25,12 @@ REGIONS_FILE = "json/regions.json"
 class RegionData:
     name: str = ""
     case: str = ""
+    id: int | None = None
 
-    def __init__(self, name: str, case: str):
+    def __init__(self, name: str, case: str, id: int):
         self.name = f"{case}: {name}"
         self.case = case
+        self.id = id
 
 @functools.cache
 def import_regions() -> List[RegionData]:

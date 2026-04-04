@@ -24,8 +24,11 @@ from . import options as ace_attorney_options  # rename due to a name conflict w
 # It is recommended that you read these in that specific order, then come back to the world class.
 class AceAttorneyWorld(World):
     """
-    APQuest is a minimal 8bit-era inspired adventure game with grid-like movement.
-    Good games don't need more than six checks.
+    Ace Attorney is a visual novel series where you find
+    contradictions to corner culprits.
+
+    Support for all modern PC ports is planned, but currently only
+    the Apollo Justice Trilogy is supported.
     """
 
     # The docstring should contain a description of the game, to be displayed on the WebHost.

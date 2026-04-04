@@ -32,8 +32,9 @@ class Profilesanity(Toggle):
 
 class LockLocations(Toggle):
     """
-    Adds another item to the itempool: The Hammer.
-    The top middle chest will now be locked behind a breakable wall, requiring the Hammer.
+    When Lock Cases is turned on, cases will be locked until the correct item is obtained.
+    When Lock Cases is turned off, all enabled cases will be unlocked at all times,
+    and Starting Case is treated like any other case.
     """
 
     display_name = "Lock Cases"
@@ -96,8 +97,10 @@ class VictoryCase(Choice):
 
 class Cases(OptionSet):
     """
-    All cases enabled for this APWorld. Start Case and Victory Case will be added if they are not included.
+    All cases enabled for this APWorld. Starting Case and Victory Case will be added if they are not included.
     """
+
+    display_name = "Enabled Cases"
 
     valid_keys_casefold = False
 

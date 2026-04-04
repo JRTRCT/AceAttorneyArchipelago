@@ -1,12 +1,45 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Iterable, List, Dict
 
-from BaseClasses import CollectionState
-from worlds.generic.Rules import add_rule, set_rule
+from BaseClasses import Entrance, Location
+from rule_builder import rules
+
+from .options import StartCase, Profilesanity
+
+import functools
 
 if TYPE_CHECKING:
     from .world import AceAttorneyWorld
+
+from .regions import CASES, unprettify_case_string
+
+RULES: List[Dict[str, List[int | List[str]]]] = [
+    {
+        "access_id": [],
+        "location_id": [8, 9, 10],
+        "req_items": [["Deadly Bottle"]],
+        "req_profiles": []
+    },
+    {
+        "access_id": [8],
+        "location_id": [12],
+        "req_items": [["Smith's Autopsy Report"]],
+        "req_profiles": []
+    },
+    {
+        "access_id": [8],
+        "location_id": [13],
+        "req_items": [["Crime Photo 2"]],
+        "req_profiles": []
+    },
+    {
+        "access_id": [12, 13],
+        "location_id": [16],
+        "req_items": [["Crime Photo"]],
+        "req_profiles": []
+    }
+]
 
 
 def set_all_rules(world: AceAttorneyWorld) -> None:
@@ -21,111 +54,64 @@ def set_all_rules(world: AceAttorneyWorld) -> None:
 
 
 def set_all_entrance_rules(world: AceAttorneyWorld) -> None:
+    if not world.options.lock_locations:
+        return
+
     # First, we need to actually grab our entrances. Luckily, there is a helper method for this.
-    overworld_to_bottom_right_room = world.get_entrance("Overworld to Bottom Right Room")
-    overworld_to_top_left_room = world.get_entrance("Overworld to Top Left Room")
-    right_room_to_final_boss_room = world.get_entrance("Right Room to Final Boss Room")
+    entrances: Iterable[Entrance] = world.get_entrances()
 
-    # An access rule is a function. We can define this function like any other function.
-    # This function must accept exactly one parameter: A "CollectionState".
-    # A CollectionState describes the current progress of the players in the multiworld, i.e. what items they have,
-    # which regions they've reached, etc.
-    # In an access rule, we can ask whether the player has a collected a certain item.
-    # We can do this via the state.has(...) function.
-    # This function takes an item name, a player number, and an optional count parameter (more on that below)
-    # Since a rule only takes a CollectionState parameter, but we also need the player number in the state.has call,
-    # our function needs to be locally defined so that it has access to the player number from the outer scope.
-    # In our case, we are inside a function that has access to the "world" parameter, so we can use world.player.
-    def can_destroy_bush(state: CollectionState) -> bool:
-        return state.has("Sword", world.player)
+    for entrance in entrances:
+        if entrance.connected_region != None and unprettify_case_string(entrance.connected_region.name) in CASES:
+            world.set_rule(entrance, rules.Has(f"Unlock {entrance.connected_region.name}", options=[rules.OptionFilter(StartCase, unprettify_case_string(entrance.connected_region.name), "ne")], filtered_resolution=True))
 
-    # Now we can set our "can_destroy_bush" rule to our entrance which requires slashing a bush to clear the path.
-    # One way to set rules is via the set_rule() function, which works on both Entrances and Locations.
-    set_rule(overworld_to_bottom_right_room, can_destroy_bush)
+@functools.cache
+def get_id_to_loc(world: AceAttorneyWorld) -> Dict[int | None, Location]:
+    return {loc.address: loc for loc in world.get_locations()}
 
-    # Because the function has to be defined locally, most worlds prefer the lambda syntax.
-    set_rule(overworld_to_top_left_room, lambda state: state.has("Key", world.player))
 
-    # Conditions can depend on event items.
-    set_rule(right_room_to_final_boss_room, lambda state: state.has("Top Left Room Button Pressed", world.player))
-
-    # Some entrance rules may only apply if the player enabled certain options.
-    # In our case, if the hammer option is enabled, we need to add the Hammer requirement to the Entrance from
-    # Overworld to the Top Middle Room.
-    if world.options.hammer:
-        overworld_to_top_middle_room = world.get_entrance("Overworld to Top Middle Room")
-        set_rule(overworld_to_top_middle_room, lambda state: state.has("Hammer", world.player))
 
 
 def set_all_location_rules(world: AceAttorneyWorld) -> None:
-    # Location rules work no differently from Entrance rules.
-    # Most of our locations are chests that can simply be opened by walking up to them.
-    # Thus, their logical requirements are covered by the Entrance rules of the Entrances that were required to
-    # reach the region that the chest sits in.
-    # However, our two enemies work differently.
-    # Entering the room with the enemy is not enough, you also need to have enough combat items to be able to defeat it.
-    # So, we need to set requirements on the Locations themselves.
-    # Since combat is a bit more complicated, we'll use this chance to cover some advanced access rule concepts.
 
-    # Sometimes, you may want to have different rules depending on the player's chosen options.
-    # There is a wrong way to do this, and a right way to do this. Let's do the wrong way first.
-    right_room_enemy = world.get_location("Right Room Enemy Drop")
+    def get_loc_by_id(id: int) -> Location | None:
+        if id in get_id_to_loc(world).keys():
+            return get_id_to_loc(world)[id]
+        return None
 
-    # DON'T DO THIS!!!!
-    set_rule(
-        right_room_enemy,
-        lambda state: (
-            state.has("Sword", world.player)
-            and (not world.options.hard_mode or state.has_any(("Shield", "Health Upgrade"), world.player))
-        ),
-    )
-    # DON'T DO THIS!!!!
+    for rule in RULES:
+        access_locs = [get_loc_by_id(id) for id in rule["access_id"] if isinstance(id, int)]
+        locations = [get_loc_by_id(id) for id in rule["location_id"] if isinstance(id, int)]
+        req_items = rule["req_items"]
+        req_profiles = rule["req_profiles"]
+        assert access_locs is not None
+        assert None not in access_locs
+        assert locations is not None
+        assert None not in locations
+        assert req_items is not None
+        assert req_profiles is not None
 
-    # Now, what's actually wrong with this? It works perfectly fine, right?
-    # If hard mode disabled, Sword is enough. If hard mode is enabled, we also need a Shield or a Health Upgrade.
-    # The access rule we just wrote does this correctly, so what's the problem?
-    # The problem is performance.
-    # Most of your world code doesn't need to be perfectly performant, since it just runs once per slot.
-    # However, access rules in particular are by far the hottest code path in Archipelago.
-    # An access rule will potentially be called thousands or even millions of times over the course of one generation.
-    # As a result, access rules are the one place where it's really worth putting in some effort to optimize.
-    # What's the performance problem here?
-    # Every time our access rule is called, it has to evaluate whether world.options.hard_mode is True or False.
-    # Wouldn't it be better if in easy mode, the access rule only checked for Sword to begin with?
-    # Wouldn't it also be better if in hard mode, it already knew it had to check Shield and Health Upgrade as well?
-    # Well, we can achieve this by doing the "if world.options.hard_mode" check outside the set_rule call,
-    # and instead having two *different* set_rule calls depending on which case we're in.
+        for loc in locations:
+            assert loc is not None
+            item_rules = [rules.HasAll(*items) for items in req_items if isinstance(items, list)]
+            loc_rules = [rules.CanReachLocation(acc_loc.name) for acc_loc in access_locs if acc_loc is not None]
+            profile_rules = [rules.HasAll(*profiles) for profiles in req_profiles if isinstance(profiles, list)]
+            if len(item_rules) == 0:
+                item_rules = [rules.True_()]
+            if len(loc_rules) == 0:
+                loc_rules = [rules.True_()]
+            if len(profile_rules) == 0:
+                profile_rules = [rules.True_()]
+            world.set_rule(
+                loc,
+                rules.Or(*item_rules) &
+                rules.And(*loc_rules) &
+                rules.Or(*profile_rules, options=[rules.OptionFilter(Profilesanity, True)], filtered_resolution=True)
+            )
 
-    if world.options.hard_mode:
-        # If you have multiple conditions, you can obviously chain them via "or" or "and".
-        # However, there are also the nice helper functions "state.has_any" and "state.has_all".
-        set_rule(
-            right_room_enemy,
-            lambda state: (
-                state.has("Sword", world.player) and state.has_any(("Shield", "Health Upgrade"), world.player)
-            ),
-        )
-    else:
-        set_rule(right_room_enemy, lambda state: state.has("Sword", world.player))
-
-    # Another way to chain multiple conditions is via the add_rule function.
-    # This makes the access rules a bit slower though, so it should only be used if your structure justifies it.
-    # In our case, it's pretty useful because hard mode and easy mode have different requirements.
-    final_boss = world.get_location("Final Boss Defeated")
-
-    # For the "known" requirements, it's still better to chain them using a normal "and" condition.
-    add_rule(final_boss, lambda state: state.has_all(("Sword", "Shield"), world.player))
-
-    if world.options.hard_mode:
-        # You can check for multiple copies of an item by using the optional count parameter of state.has().
-        add_rule(final_boss, lambda state: state.has("Health Upgrade", world.player, 2))
 
 
 def set_completion_condition(world: AceAttorneyWorld) -> None:
-    # Finally, we need to set a completion condition for our world, defining what the player needs to win the game.
-    # You can just set a completion condition directly like any other condition, referencing items the player receives:
-    world.multiworld.completion_condition[world.player] = lambda state: state.has_all(("Sword", "Shield"), world.player)
 
     # In our case, we went for the Victory event design pattern (see create_events() in locations.py).
     # So lets undo what we just did, and instead set the completion condition to:
-    world.multiworld.completion_condition[world.player] = lambda state: state.has("Victory", world.player)
+    world.set_completion_rule(rules.Has("Victory"))

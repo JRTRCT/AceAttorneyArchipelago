@@ -1,12 +1,8 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, List, Dict, Set, Tuple
+from typing import TYPE_CHECKING, List
 
 from BaseClasses import Region
-
-import json
-import pkgutil
-import functools
 
 if TYPE_CHECKING:
     from .world import AceAttorneyWorld
@@ -21,23 +17,35 @@ if TYPE_CHECKING:
 # This is why we create regions first, and then later we create the locations (in locations.py).
 
 CASES = [
-    "4-1",
-    "4-2",
-    "4-3",
-    "4-4",
-    "5-1",
-    "5-2",
-    "5-3",
-    "5-4",
-    "5-5",
-    "5-SP",
-    "6-1",
-    "6-2",
-    "6-3",
-    "6-4",
-    "6-5",
-    "6-SP"
+    "case_4_1",
+    "case_4_2",
+    "case_4_3",
+    "case_4_4",
+    "case_5_1",
+    "case_5_2",
+    "case_5_3",
+    "case_5_4",
+    "case_5_5",
+    "case_5_SP",
+    "case_6_1",
+    "case_6_2",
+    "case_6_3",
+    "case_6_4",
+    "case_6_5",
+    "case_6_SP"
 ]
+
+def prettify_case_string(case_name: str) -> str:
+    if case_name.count('_') != 2:
+        return case_name
+    split = case_name.split('_')
+    return f"{split[1]}-{split[2]}"
+
+def unprettify_case_string(case_name: str) -> str:
+    if case_name.count('-') != 1:
+        return case_name
+    split = case_name.split('-')
+    return f"case_{split[0]}_{split[1]}"
 
 
 def create_and_connect_regions(world: AceAttorneyWorld) -> None:
@@ -53,7 +61,7 @@ def create_all_regions(world: AceAttorneyWorld) -> None:
 
     for region_name in CASES:
         if region_name in world.options.cases.value:
-            reg = Region(region_name, world.player, world.multiworld)
+            reg = Region(prettify_case_string(region_name), world.player, world.multiworld)
             regions.append(reg)
     main_menu = Region("Menu", world.player, world.multiworld)
     regions.append(main_menu)
@@ -67,5 +75,6 @@ def connect_regions(world: AceAttorneyWorld) -> None:
 
     for region_name in CASES:
         if region_name in world.options.cases.value:
+            region_name = prettify_case_string(region_name)
             reg = world.get_region(region_name)
             menu_region.connect(reg, f"Menu to Case {region_name}",)

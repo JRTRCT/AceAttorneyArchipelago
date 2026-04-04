@@ -43,8 +43,8 @@ class AceAttorneyWorld(World):
 
     # Our world class must have a static location_name_to_id and item_name_to_id defined.
     # We define these in regions.py and items.py respectively, so we just set them here.
-    location_name_to_id = locations.LOCATION_NAME_TO_ID
-    item_name_to_id = items.ITEM_NAME_TO_ID
+    location_name_to_id = locations.location_name_to_id()
+    item_name_to_id = items.item_name_to_id()
 
     # There is always one region that the generator starts from & assumes you can always go back to.
     # This defaults to "Menu", but you can change it by overriding origin_region_name.
@@ -82,5 +82,5 @@ class AceAttorneyWorld(World):
     def fill_slot_data(self) -> Mapping[str, Any]:
         # If you need access to the player's chosen options on the client side, there is a helper for that.
         return self.options.as_dict(
-            "hard_mode", "hammer", "extra_starting_chest", "confetti_explosiveness", "player_sprite"
+            "lock_locations", "profile_sanity", "cases"
         )

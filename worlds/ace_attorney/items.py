@@ -1,35 +1,44 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Dict
 
 from BaseClasses import Item, ItemClassification
 
 if TYPE_CHECKING:
     from .world import AceAttorneyWorld
 
+import functools
+
 # Every item must have a unique integer ID associated with it.
 # We will have a lookup from item name to ID here that, in world.py, we will import and bind to the world class.
 # Even if an item doesn't exist on specific options, it must be present in this lookup.
-ITEM_NAME_TO_ID = {
-    "Key": 1,
-    "Sword": 2,
-    "Shield": 3,
-    "Hammer": 4,
-    "Health Upgrade": 5,
-    "Confetti Cannon": 6,
-    "Math Trap": 7,
+FILLER_NAME_TO_ID = {
+    "Objection!": 1,
+    "Hold It!": 2,
+    "Take That!": 3,
+    "Gotcha!": 4,
+    "Eureka!": 5,
+    "'Scuse Me!": 6,
+    "Got It!": 7,
+    "Not So Fast!": 8,
+    "Overruled!": 9,
+    "Silence!": 10,
+    "Yes!": 11,
+    "Shut Up!": 12,
+    "That's Enough!": 13,
+    "Satorha!": 14,
+    "Such Insolence!": 15
 }
 
-# Items should have a defined default classification.
-# In our case, we will make a dictionary from item name to classification.
-DEFAULT_ITEM_CLASSIFICATIONS = {
-    "Key": ItemClassification.progression,
-    "Sword": ItemClassification.progression | ItemClassification.useful,  # Items can have multiple classifications.
-    "Shield": ItemClassification.progression,
-    "Hammer": ItemClassification.progression,
-    "Health Upgrade": ItemClassification.useful,
-    "Confetti Cannon": ItemClassification.filler,
-    "Math Trap": ItemClassification.trap,
+ITEM_NAME_TO_ID = {
+    "Deadly Bottle": 16,
+    "Smith's Autopsy Report": 17,
+    "Crime Photo": 18,
+    "Crime Photo 2": 19
+}
+
+PROFILE_NAME_TO_ID = {
+    "Phoneix Wright": 20
 }
 
 
@@ -37,6 +46,14 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
 # To make this simple, it is common practice to subclass the basic Item class and override the "game" field.
 class AceAttorneyItem(Item):
     game = "APQuest"
+
+@functools.cache
+def item_name_to_id() -> Dict[str, int]:
+    name_to_id = {}
+    name_to_id.update(FILLER_NAME_TO_ID)
+    name_to_id.update(ITEM_NAME_TO_ID)
+    name_to_id.update(PROFILE_NAME_TO_ID)
+    return name_to_id
 
 
 # Ontop of our regular itempool, our world must be able to create arbitrary amounts of filler as requested by core.
@@ -50,9 +67,7 @@ def get_random_filler_item_name(world: AceAttorneyWorld) -> str:
     # IMPORTANT: Whenever you need to use a random generator, you must use world.random.
     # This ensures that generating with the same generator seed twice yields the same output.
     # DO NOT use a bare random object from Python's built-in random module.
-    if world.random.randint(0, 99) < world.options.trap_chance:
-        return "Math Trap"
-    return "Confetti Cannon"
+    return [key for key in FILLER_NAME_TO_ID.keys()][world.random.randint(0, len(FILLER_NAME_TO_ID))]
 
 
 def create_item_with_correct_classification(world: AceAttorneyWorld, name: str) -> AceAttorneyItem:
@@ -60,11 +75,9 @@ def create_item_with_correct_classification(world: AceAttorneyWorld, name: str) 
     # So, we make this helper function that creates the item by name with the correct classification.
     # Note: This function's content could just be the contents of world.create_item in world.py directly,
     # but it seemed nicer to have it in its own function over here in items.py.
-    classification = DEFAULT_ITEM_CLASSIFICATIONS[name]
+    classification = ItemClassification.filler
 
-    # It is perfectly normal and valid for an item's classification to differ based on the player's options.
-    # In our case, Health Upgrades are only relevant to logic (and thus labeled as "progression") in hard mode.
-    if name == "Health Upgrade" and world.options.hard_mode:
+    if name in ITEM_NAME_TO_ID.keys() or (name in PROFILE_NAME_TO_ID.keys() and world.options.profile_sanity):
         classification = ItemClassification.progression
 
     return AceAttorneyItem(name, classification, ITEM_NAME_TO_ID[name], world.player)
@@ -81,39 +94,9 @@ def create_all_items(world: AceAttorneyWorld) -> None:
     # Creating items should generally be done via the world's create_item method.
     # First, we create a list containing all the items that always exist.
 
-    itempool: list[Item] = [
-        world.create_item("Key"),
-        world.create_item("Sword"),
-        world.create_item("Shield"),
-        world.create_item("Health Upgrade"),
-        world.create_item("Health Upgrade"),
-    ]
-
-    # Some items may only exist if the player enables certain options.
-    # In our case, If the hammer option is enabled, the sixth item is the Hammer.
-    # Otherwise, we add a filler Confetti Cannon.
-    if world.options.hammer:
-        # Once again, it is important to stress that even though the Hammer doesn't always exist,
-        # it must be present in the worlds item_name_to_id.
-        # Whether it is actually in the itempool is determined purely by whether we create and add the item here.
-        itempool.append(world.create_item("Hammer"))
-
-    # Archipelago requires that each world submits as many locations as it submits items.
-    # This is where we can use our filler and trap items.
-    # APQuest has two of these: The Confetti Cannon and the Math Trap.
-    # (Unfortunately, Archipelago is a bit ambiguous about its terminology here:
-    #  "filler" is an ItemClassification separate from "trap", but in a lot of its functions,
-    #  Archipelago will use "filler" to just mean "an additional item created to fill out the itempool".
-    #  "Filler" in this sense can technically have any ItemClassification,
-    #  but most commonly ItemClassification.filler or ItemClassification.trap.
-    #  Starting here, the word "filler" will be used to collectively refer to APQuest's Confetti Cannon and Math Trap,
-    #  which are ItemClassification.filler and ItemClassification.trap respectively.)
-    # Creating filler items works the same as any other item. But there is a question:
-    # How many filler items do we actually need to create?
-    # In regions.py, we created either six or seven locations depending on the "extra_starting_chest" option.
-    # In this function, we have created five or six items depending on whether the "hammer" option is enabled.
-    # We *could* have a really complicated if-else tree checking the options again, but there is a better way.
-    # We can compare the size of our itempool so far to the number of locations in our world.
+    itempool: list[Item] = [world.create_item(name) for name in ITEM_NAME_TO_ID.keys()]
+    if world.options.profile_sanity:
+        itempool.extend(world.create_item(name) for name in PROFILE_NAME_TO_ID.keys())
 
     # The length of our itempool is easy to determine, since we have it as a list.
     number_of_items = len(itempool)
@@ -154,13 +137,3 @@ def create_all_items(world: AceAttorneyWorld) -> None:
     # Anyway. With our world's itempool finalized, we now need to submit it to the multiworld itempool.
     # This is how the generator actually knows about the existence of our items.
     world.multiworld.itempool += itempool
-
-    # Sometimes, you might want the player to start with certain items already in their inventory.
-    # These items are called "precollected items".
-    # They will be sent as soon as they connect for the first time (depending on your client's item handling flag).
-    # Players can add precollected items themselves via the generic "start_inventory" option.
-    # If you want to add your own precollected items, you can do so via world.push_precollected().
-    if world.options.start_with_one_confetti_cannon:
-        # We're adding a filler item, but you can also add progression items to the player's precollected inventory.
-        starting_confetti_cannon = world.create_item("Confetti Cannon")
-        world.push_precollected(starting_confetti_cannon)

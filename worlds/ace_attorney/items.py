@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Dict
+from typing import TYPE_CHECKING, Dict, NamedTuple
 
 from BaseClasses import Item, ItemClassification
 
@@ -9,51 +9,52 @@ if TYPE_CHECKING:
 
 import functools
 
+class ItemData(NamedTuple):
+    id: int
+    group: str
+    case: str = ""
+    classification: ItemClassification = ItemClassification.progression
+
+ITEM_DICT: Dict[str, ItemData] = {
+    "Objection!": ItemData(1, "filler", classification=ItemClassification.filler),
+    "Hold It!": ItemData(2, "filler", classification=ItemClassification.filler),
+    "Take That!": ItemData(3, "filler", classification=ItemClassification.filler),
+    "Gotcha!": ItemData(4, "filler", classification=ItemClassification.filler),
+    "Eureka!": ItemData(5, "filler", classification=ItemClassification.filler),
+    "'Scuse Me!": ItemData(6, "filler", classification=ItemClassification.filler),
+    "Got It!": ItemData(7, "filler", classification=ItemClassification.filler),
+    "Not So Fast!": ItemData(8, "filler", classification=ItemClassification.filler),
+    "Overruled!": ItemData(9, "filler", classification=ItemClassification.filler),
+    "Silence!": ItemData(10, "filler", classification=ItemClassification.filler),
+    "Yes!": ItemData(11, "filler", classification=ItemClassification.filler),
+    "Shut Up!": ItemData(12, "filler", classification=ItemClassification.filler),
+    "That's Enough!": ItemData(13, "filler", classification=ItemClassification.filler),
+    "Satorha!": ItemData(14, "filler", classification=ItemClassification.filler),
+    "Such Insolence!": ItemData(15, "filler", classification=ItemClassification.filler),
+    "Deadly Bottle": ItemData(16, "evidence", "4-1"),
+    "Smith's Autopsy Report": ItemData(16, "evidence", "4-1"),
+    "Crime Photo 1": ItemData(18, "evidence", "4-1"),
+    "Crime Photo 2": ItemData(19, "evidence", "4-1"),
+    "Phoneix Wright": ItemData(20, "profile", "4-1"),
+    "Kristoph Gavin": ItemData(21, "profile", "4-1"),
+    "Chip Photo": ItemData(22, "evidence", "4-1"),
+    "Winston Payne": ItemData(23, "profile", "4-1"),
+    "Olga Orly": ItemData(24, "profile", "4-1")
+}
+
 # Every item must have a unique integer ID associated with it.
 # We will have a lookup from item name to ID here that, in world.py, we will import and bind to the world class.
 # Even if an item doesn't exist on specific options, it must be present in this lookup.
-FILLER_NAME_TO_ID = {
-    "Objection!": 1,
-    "Hold It!": 2,
-    "Take That!": 3,
-    "Gotcha!": 4,
-    "Eureka!": 5,
-    "'Scuse Me!": 6,
-    "Got It!": 7,
-    "Not So Fast!": 8,
-    "Overruled!": 9,
-    "Silence!": 10,
-    "Yes!": 11,
-    "Shut Up!": 12,
-    "That's Enough!": 13,
-    "Satorha!": 14,
-    "Such Insolence!": 15
-}
 
-ITEM_NAME_TO_ID = {
-    "Deadly Bottle": 16,
-    "Smith's Autopsy Report": 17,
-    "Crime Photo": 18,
-    "Crime Photo 2": 19
-}
+ITEM_NAME_TO_ID = {f"{data.case}: {name}": data.id for name, data in ITEM_DICT.items()}
 
-PROFILE_NAME_TO_ID = {
-    "Phoneix Wright": 20
-}
+FILLER_ITEM_NAMES = [name for name, data in ITEM_DICT.items() if data.group == "filler"]
 
 
 # Each Item instance must correctly report the "game" it belongs to.
 # To make this simple, it is common practice to subclass the basic Item class and override the "game" field.
 class AceAttorneyItem(Item):
-    game = "APQuest"
-
-@functools.cache
-def item_name_to_id() -> Dict[str, int]:
-    name_to_id = {}
-    name_to_id.update(FILLER_NAME_TO_ID)
-    name_to_id.update(ITEM_NAME_TO_ID)
-    name_to_id.update(PROFILE_NAME_TO_ID)
-    return name_to_id
+    game = "Ace Attorney"
 
 
 # Ontop of our regular itempool, our world must be able to create arbitrary amounts of filler as requested by core.
@@ -67,7 +68,7 @@ def get_random_filler_item_name(world: AceAttorneyWorld) -> str:
     # IMPORTANT: Whenever you need to use a random generator, you must use world.random.
     # This ensures that generating with the same generator seed twice yields the same output.
     # DO NOT use a bare random object from Python's built-in random module.
-    return [key for key in FILLER_NAME_TO_ID.keys()][world.random.randint(0, len(FILLER_NAME_TO_ID))]
+    return FILLER_ITEM_NAMES[world.random.randint(0, len(FILLER_ITEM_NAMES))]
 
 
 def create_item_with_correct_classification(world: AceAttorneyWorld, name: str) -> AceAttorneyItem:
@@ -77,8 +78,8 @@ def create_item_with_correct_classification(world: AceAttorneyWorld, name: str) 
     # but it seemed nicer to have it in its own function over here in items.py.
     classification = ItemClassification.filler
 
-    if name in ITEM_NAME_TO_ID.keys() or (name in PROFILE_NAME_TO_ID.keys() and world.options.profile_sanity):
-        classification = ItemClassification.progression
+    if name in ITEM_DICT.keys() and (ITEM_DICT[name].group == "evidence" or (ITEM_DICT[name].group == "profile" and world.options.profile_sanity)):
+        classification = ITEM_DICT[name].classification
 
     return AceAttorneyItem(name, classification, ITEM_NAME_TO_ID[name], world.player)
 
@@ -94,9 +95,9 @@ def create_all_items(world: AceAttorneyWorld) -> None:
     # Creating items should generally be done via the world's create_item method.
     # First, we create a list containing all the items that always exist.
 
-    itempool: list[Item] = [world.create_item(name) for name in ITEM_NAME_TO_ID.keys()]
+    itempool: list[Item] = [world.create_item(name) for name, data in ITEM_DICT.items() if data.group == "evidence"]
     if world.options.profile_sanity:
-        itempool.extend(world.create_item(name) for name in PROFILE_NAME_TO_ID.keys())
+        itempool.extend(world.create_item(name) for name, data in ITEM_DICT.items() if data.group == "profile")
 
     # The length of our itempool is easy to determine, since we have it as a list.
     number_of_items = len(itempool)

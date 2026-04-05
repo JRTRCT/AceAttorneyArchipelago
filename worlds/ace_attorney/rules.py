@@ -17,26 +17,44 @@ from .regions import CASES, unprettify_case_string
 RULES: List[Dict[str, List[int | List[str]]]] = [
     {
         "access_id": [],
-        "location_id": [8, 9, 10],
-        "req_items": [["Deadly Bottle"]],
+        "location_id": [9, 10, 11, 12, 13],
+        "req_items": [["4-1: Deadly Bottle"]],
         "req_profiles": []
     },
     {
-        "access_id": [8],
-        "location_id": [12],
-        "req_items": [["Smith's Autopsy Report"]],
+        "access_id": [9],
+        "location_id": [14, 15],
+        "req_items": [["4-1: Smith's Autopsy Report"]],
         "req_profiles": []
     },
     {
-        "access_id": [8],
-        "location_id": [13],
-        "req_items": [["Crime Photo 2"]],
-        "req_profiles": []
-    },
-    {
-        "access_id": [12, 13],
+        "access_id": [9],
         "location_id": [16],
-        "req_items": [["Crime Photo"]],
+        "req_items": [["4-1: Crime Photo 2"]],
+        "req_profiles": []
+    },
+    {
+        "access_id": [16],
+        "location_id": [17, 18, 19],
+        "req_items": [["4-1: Chip Photo"]],
+        "req_profiles": []
+    },
+    {
+        "access_id": [19],
+        "location_id": [20],
+        "req_items": [["4-1: Wright's Cell Phone"]],
+        "req_profiles": [["4-1: Kristoph Gavin"]]
+    },
+    {
+        "access_id": [20],
+        "location_id": [21, 22],
+        "req_items": [["4-1: Crime Photo 1"]],
+        "req_profiles": []
+    },
+    {
+        "access_id": [22],
+        "location_id": [23, 24, 25],
+        "req_items": [["4-1: Bloody Ace"]],
         "req_profiles": []
     }
 ]
@@ -105,7 +123,7 @@ def set_all_location_rules(world: AceAttorneyWorld) -> None:
                 loc,
                 rules.Or(*item_rules) &
                 rules.And(*loc_rules) &
-                rules.Or(*profile_rules, options=[rules.OptionFilter(Profilesanity, True)], filtered_resolution=True)
+                rules.Or(*profile_rules, options=[rules.OptionFilter(Profilesanity, True)], filtered_resolution=True),
             )
 
 

@@ -12,7 +12,9 @@ import functools
 if TYPE_CHECKING:
     from .world import AceAttorneyWorld
 
-from .regions import CASES, unprettify_case_string
+from .regions import CASES, unprettify_case_string, prettify_case_string
+
+from .locations import LOCATION_NAME_TO_ID
 
 RULES: List[Dict[str, List[int | List[str]]]] = [
     {
@@ -82,23 +84,20 @@ def set_all_entrance_rules(world: AceAttorneyWorld) -> None:
         if entrance.connected_region != None and unprettify_case_string(entrance.connected_region.name) in CASES:
             world.set_rule(entrance, rules.Has(f"Unlock {entrance.connected_region.name}", options=[rules.OptionFilter(StartCase, unprettify_case_string(entrance.connected_region.name), "ne")], filtered_resolution=True))
 
-@functools.cache
-def get_id_to_loc(world: AceAttorneyWorld) -> Dict[int | None, Location]:
-    return {loc.address: loc for loc in world.get_locations()}
-
 
 
 
 def set_all_location_rules(world: AceAttorneyWorld) -> None:
 
     def get_loc_by_id(id: int) -> Location | None:
-        if id in get_id_to_loc(world).keys():
-            return get_id_to_loc(world)[id]
-        return None
+        try:
+            return world.get_location(world.location_id_to_name[id])
+        except:
+            return None
 
     for rule in RULES:
-        access_locs = [get_loc_by_id(id) for id in rule["access_id"] if isinstance(id, int)]
-        locations = [get_loc_by_id(id) for id in rule["location_id"] if isinstance(id, int)]
+        access_locs = [get_loc_by_id(id) for id in rule["access_id"] if isinstance(id, int) and get_loc_by_id(id) is not None]
+        locations = [get_loc_by_id(id) for id in rule["location_id"] if isinstance(id, int) and get_loc_by_id(id) is not None]
         req_items = rule["req_items"]
         req_profiles = rule["req_profiles"]
         assert access_locs is not None

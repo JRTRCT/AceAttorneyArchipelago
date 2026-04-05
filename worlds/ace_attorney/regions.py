@@ -61,7 +61,7 @@ def create_all_regions(world: AceAttorneyWorld) -> None:
 
     for region_name in CASES:
         if region_name in world.options.cases.value:
-            reg = Region(prettify_case_string(region_name), world.player, world.multiworld)
+            reg = Region(region_name, world.player, world.multiworld)
             regions.append(reg)
     main_menu = Region("Menu", world.player, world.multiworld)
     regions.append(main_menu)
@@ -75,6 +75,5 @@ def connect_regions(world: AceAttorneyWorld) -> None:
 
     for region_name in CASES:
         if region_name in world.options.cases.value:
-            region_name = prettify_case_string(region_name)
             reg = world.get_region(region_name)
             menu_region.connect(reg, f"Menu to Case {region_name}",)

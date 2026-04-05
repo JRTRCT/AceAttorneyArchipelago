@@ -7,6 +7,8 @@ from BaseClasses import Item, ItemClassification
 if TYPE_CHECKING:
     from .world import AceAttorneyWorld
 
+from .regions import unprettify_case_string
+
 import functools
 
 class ItemData(NamedTuple):
@@ -39,14 +41,16 @@ ITEM_DICT: Dict[str, ItemData] = {
     "Kristoph Gavin": ItemData(21, "profile", "4-1"),
     "Chip Photo": ItemData(22, "evidence", "4-1"),
     "Winston Payne": ItemData(23, "profile", "4-1"),
-    "Olga Orly": ItemData(24, "profile", "4-1")
+    "Olga Orly": ItemData(24, "profile", "4-1"),
+    "Wright's Cell Phone": ItemData(25, "evidence", "4-1"),
+    "Bloody Ace": ItemData(26, "evidence", "4-1")
 }
 
 # Every item must have a unique integer ID associated with it.
 # We will have a lookup from item name to ID here that, in world.py, we will import and bind to the world class.
 # Even if an item doesn't exist on specific options, it must be present in this lookup.
 
-ITEM_NAME_TO_ID = {f"{data.case}: {name}": data.id for name, data in ITEM_DICT.items()}
+ITEM_NAME_TO_ID = {f"{data.case}: {name}" if data.case != "" else name: data.id for name, data in ITEM_DICT.items()}
 
 FILLER_ITEM_NAMES = [name for name, data in ITEM_DICT.items() if data.group == "filler"]
 
@@ -68,7 +72,7 @@ def get_random_filler_item_name(world: AceAttorneyWorld) -> str:
     # IMPORTANT: Whenever you need to use a random generator, you must use world.random.
     # This ensures that generating with the same generator seed twice yields the same output.
     # DO NOT use a bare random object from Python's built-in random module.
-    return FILLER_ITEM_NAMES[world.random.randint(0, len(FILLER_ITEM_NAMES))]
+    return FILLER_ITEM_NAMES[world.random.randint(0, len(FILLER_ITEM_NAMES) - 1)]
 
 
 def create_item_with_correct_classification(world: AceAttorneyWorld, name: str) -> AceAttorneyItem:
@@ -80,6 +84,9 @@ def create_item_with_correct_classification(world: AceAttorneyWorld, name: str) 
 
     if name in ITEM_DICT.keys() and (ITEM_DICT[name].group == "evidence" or (ITEM_DICT[name].group == "profile" and world.options.profile_sanity)):
         classification = ITEM_DICT[name].classification
+    
+    if ITEM_DICT[name].case != "":
+        name = f"{ITEM_DICT[name].case}: {name}"
 
     return AceAttorneyItem(name, classification, ITEM_NAME_TO_ID[name], world.player)
 
@@ -95,9 +102,9 @@ def create_all_items(world: AceAttorneyWorld) -> None:
     # Creating items should generally be done via the world's create_item method.
     # First, we create a list containing all the items that always exist.
 
-    itempool: list[Item] = [world.create_item(name) for name, data in ITEM_DICT.items() if data.group == "evidence"]
+    itempool: list[Item] = [world.create_item(name) for name, data in ITEM_DICT.items() if data.group == "evidence" and unprettify_case_string(data.case) in world.options.cases.value]
     if world.options.profile_sanity:
-        itempool.extend(world.create_item(name) for name, data in ITEM_DICT.items() if data.group == "profile")
+        itempool.extend(world.create_item(name) for name, data in ITEM_DICT.items() if data.group == "profile" and unprettify_case_string(data.case) in world.options.cases.value)
 
     # The length of our itempool is easy to determine, since we have it as a list.
     number_of_items = len(itempool)

@@ -133,7 +133,24 @@ class Cases(OptionSet):
         "Case 6-SP"
     ]
 
-    default = ["all"]
+    default = [
+        "Case 4-1",
+        "Case 4-2",
+        "Case 4-3",
+        "Case 4-4",
+        "Case 5-1",
+        "Case 5-2",
+        "Case 5-3",
+        "Case 5-4",
+        "Case 5-5",
+        "Case 5-SP",
+        "Case 6-1",
+        "Case 6-2",
+        "Case 6-3",
+        "Case 6-4",
+        "Case 6-5",
+        "Case 6-SP"
+    ]
 
 
 # We must now define a dataclass inheriting from PerGameCommonOptions that we put all our options in.

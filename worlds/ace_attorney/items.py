@@ -102,9 +102,9 @@ def create_all_items(world: AceAttorneyWorld) -> None:
     # Creating items should generally be done via the world's create_item method.
     # First, we create a list containing all the items that always exist.
 
-    itempool: list[Item] = [world.create_item(name) for name, data in ITEM_DICT.items() if data.group == "evidence" and unprettify_case_string(data.case) in world.options.cases.value]
+    itempool: list[Item] = [world.create_item(name) for name, data in ITEM_DICT.items() if data.group == "evidence" and unprettify_case_string(data.case) in world.cases]
     if world.options.profile_sanity:
-        itempool.extend(world.create_item(name) for name, data in ITEM_DICT.items() if data.group == "profile" and unprettify_case_string(data.case) in world.options.cases.value)
+        itempool.extend(world.create_item(name) for name, data in ITEM_DICT.items() if data.group == "profile" and unprettify_case_string(data.case) in world.cases)
 
     # The length of our itempool is easy to determine, since we have it as a list.
     number_of_items = len(itempool)

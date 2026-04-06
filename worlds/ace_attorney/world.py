@@ -1,5 +1,5 @@
 from collections.abc import Mapping
-from typing import Any
+from typing import Any, Set
 
 # Imports of base Archipelago modules must be absolute.
 from worlds.AutoWorld import World
@@ -7,6 +7,8 @@ from worlds.AutoWorld import World
 # Imports of your world's files must be relative.
 from . import items, locations, regions, rules, web_world
 from . import options as ace_attorney_options  # rename due to a name conflict with World.options
+
+from .regions import unprettify_case_string
 
 # APQuest will go through all the parts of the world api one step at a time,
 # with many examples and comments across multiple files.
@@ -53,14 +55,17 @@ class AceAttorneyWorld(World):
     # This defaults to "Menu", but you can change it by overriding origin_region_name.
     origin_region_name = "Menu"
 
+    cases: Set[str] = set()
+
     def generate_early(self) -> None:
-        if self.options.start_case.current_key not in self.options.cases.value:
-            self.options.cases.value.add(self.options.start_case.current_key)
-        if self.options.victory_case.current_key not in self.options.cases.value:
-            self.options.cases.value.add(self.options.victory_case.current_key)
         if "all" in self.options.cases.value:
             self.options.cases.value.update(self.options.cases.valid_keys)
             self.options.cases.value.discard("all")
+        self.cases = set(unprettify_case_string(case.split(" ", 1)[1]).lower() for case in self.options.cases.value)
+        if self.options.start_case.current_key not in self.cases:
+            self.cases.add(self.options.start_case.current_key)
+        if self.options.victory_case.current_key not in self.cases:
+            self.cases.add(self.options.victory_case.current_key)
 
     # Our world class must have certain functions ("steps") that get called during generation.
     # The main ones are: create_regions, set_rules, create_items.

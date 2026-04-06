@@ -115,22 +115,22 @@ class Cases(OptionSet):
 
     valid_keys = [
         "all",
-        "case_4_1",
-        "case_4_2",
-        "case_4_3",
-        "case_4_4",
-        "case_5_1",
-        "case_5_2",
-        "case_5_3",
-        "case_5_4",
-        "case_5_5",
-        "case_5_SP",
-        "case_6_1",
-        "case_6_2",
-        "case_6_3",
-        "case_6_4",
-        "case_6_5",
-        "case_6_SP"
+        "Case 4-1",
+        "Case 4-2",
+        "Case 4-3",
+        "Case 4-4",
+        "Case 5-1",
+        "Case 5-2",
+        "Case 5-3",
+        "Case 5-4",
+        "Case 5-5",
+        "Case 5-SP",
+        "Case 6-1",
+        "Case 6-2",
+        "Case 6-3",
+        "Case 6-4",
+        "Case 6-5",
+        "Case 6-SP"
     ]
 
 

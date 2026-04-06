@@ -7,8 +7,6 @@ from BaseClasses import Item, ItemClassification
 if TYPE_CHECKING:
     from .world import AceAttorneyWorld
 
-from .regions import unprettify_case_string
-
 import functools
 
 class ItemData(NamedTuple):

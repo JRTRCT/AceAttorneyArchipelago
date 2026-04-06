@@ -12,7 +12,7 @@ import functools
 if TYPE_CHECKING:
     from .world import AceAttorneyWorld
 
-from .regions import CASES, unprettify_case_string, prettify_case_string
+from .regions import CASES
 
 from .locations import LOCATION_NAME_TO_ID
 

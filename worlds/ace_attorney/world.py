@@ -8,7 +8,7 @@ from worlds.AutoWorld import World
 from . import items, locations, regions, rules, web_world
 from . import options as ace_attorney_options  # rename due to a name conflict with World.options
 
-from .regions import unprettify_case_string, prettify_case_string
+from .regions import prettify_case_string
 
 # APQuest will go through all the parts of the world api one step at a time,
 # with many examples and comments across multiple files.

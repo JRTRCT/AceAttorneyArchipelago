@@ -9,7 +9,7 @@ from . import items
 if TYPE_CHECKING:
     from .world import AceAttorneyWorld
 
-from .regions import CASES, prettify_case_string
+from .regions import CASES
 
 import functools
 

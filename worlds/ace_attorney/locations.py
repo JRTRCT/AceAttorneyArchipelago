@@ -17,7 +17,7 @@ import functools
 # We will have a lookup from location name to ID here that, in world.py, we will import and bind to the world class.
 # Even if a location doesn't exist on specific options, it must be present in this lookup.
 LOCATION_NAME_TO_ID: Dict[str, Dict[str, Dict[str, int]]] = {
-    "case_4_1": {
+    "4-1": {
         "locations": {
             "Starting Evidence: Attorney's Badge": 1,
             "Starting Evidence: Smith's Autopsy Report": 2,
@@ -48,7 +48,7 @@ LOCATION_NAME_TO_ID: Dict[str, Dict[str, Dict[str, int]]] = {
             "Obtain Profile: Olga Orly": 12
         }
     },
-    "case_4_2": {
+    "4-2": {
         "locations": {
             "Starting Evidence: Attorney's Badge": 26,
             "Obtain Evidence: Map": 28,
@@ -95,7 +95,7 @@ LOCATION_NAME_TO_ID: Dict[str, Dict[str, Dict[str, int]]] = {
             "Obtain Profile: Wesley Stickler": 49
         }
     },
-    "case_4_3": {
+    "4-3": {
         "locations": {
             "Starting Evidence: Attorney's Badge (Justice)": 67,
             "Obtain Evidence: Lyrics Sheet": 68,
@@ -142,7 +142,7 @@ LOCATION_NAME_TO_ID: Dict[str, Dict[str, Dict[str, int]]] = {
             "Obtain Profile: Valant Gramarye": 90
         }
     },
-    "case_4_4": {
+    "4-4": {
         "locations": {
             "Starting Evidence: Attorney's Badge": 108,
             "Obtain Evidence: Magic Show Ticket": 111,
@@ -207,7 +207,7 @@ LOCATION_NAME_TO_ID: Dict[str, Dict[str, Dict[str, int]]] = {
             "Obtain Profile: Mike Meekens": 162
         }
     },
-    "case_5_1": {
+    "5-1": {
         "locations": {
             "Starting Evidence: Attorney's Badge": 169,
             "Obtain Evidence: Arme's Autopsy Report": 170,
@@ -237,7 +237,7 @@ LOCATION_NAME_TO_ID: Dict[str, Dict[str, Dict[str, int]]] = {
             "Obtain Profile: Ted Tonate": 181
         }
     },
-    "case_5_2": {
+    "5-2": {
         "locations": {
             "Starting Evidence: Attorney's Badge": 193,
             "Obtain Evidence: Yokai Legend Scroll": 194,
@@ -288,43 +288,43 @@ LOCATION_NAME_TO_ID: Dict[str, Dict[str, Dict[str, int]]] = {
             "Obtain Profile: Simon Blackquill": 217
         }
     },
-    "case_5_3": {
+    "5-3": {
         "locations": {},
         "profile_locations": {}
     },
-    "case_5_4": {
+    "5-4": {
         "locations": {},
         "profile_locations": {}
     },
-    "case_5_5": {
+    "5-5": {
         "locations": {},
         "profile_locations": {}
     },
-    "case_5_SP": {
+    "5-SP": {
         "locations": {},
         "profile_locations": {}
     },
-    "case_6_1": {
+    "6-1": {
         "locations": {},
         "profile_locations": {}
     },
-    "case_6_2": {
+    "6-2": {
         "locations": {},
         "profile_locations": {}
     },
-    "case_6_3": {
+    "6-3": {
         "locations": {},
         "profile_locations": {}
     },
-    "case_6_4": {
+    "6-4": {
         "locations": {},
         "profile_locations": {}
     },
-    "case_6_5": {
+    "6-5": {
         "locations": {},
         "profile_locations": {}
     },
-    "case_6_SP": {
+    "6-SP": {
         "locations": {},
         "profile_locations": {}
     }
@@ -340,8 +340,8 @@ class AceAttorneyLocation(Location):
 def location_name_to_id() -> Dict[str, int]:
     res = {}
     for region in CASES:
-        res.update({f"{prettify_case_string(region)}: {loc}":id for loc, id in LOCATION_NAME_TO_ID[region]["locations"].items()})
-        res.update({f"{prettify_case_string(region)}: {loc}":id for loc, id in LOCATION_NAME_TO_ID[region]["profile_locations"].items()})
+        res.update({f"{region}: {loc}":id for loc, id in LOCATION_NAME_TO_ID[region]["locations"].items()})
+        res.update({f"{region}: {loc}":id for loc, id in LOCATION_NAME_TO_ID[region]["profile_locations"].items()})
     return res
 
 def create_all_locations(world: AceAttorneyWorld) -> None:
@@ -351,21 +351,21 @@ def create_all_locations(world: AceAttorneyWorld) -> None:
 
 def create_regular_locations(world: AceAttorneyWorld) -> None:
 
-    final_case: str = prettify_case_string(world.options.victory_case.current_key).upper()
+    final_case: str = world.victory_case
 
     for region in CASES:
         if region.lower() in world.cases:
             
-            world.get_region(region).add_locations({f"{prettify_case_string(region)}: {loc}":id if loc != f"Finish Case: {final_case}" else None for loc, id in LOCATION_NAME_TO_ID[region]["locations"].items()}, AceAttorneyLocation)
+            world.get_region(region).add_locations({f"{region}: {loc}":id if loc != f"Finish Case: {final_case}" else None for loc, id in LOCATION_NAME_TO_ID[region]["locations"].items()}, AceAttorneyLocation)
             if world.options.profile_sanity:
-                world.get_region(region).add_locations({f"{prettify_case_string(region)}: {loc}":id for loc, id in LOCATION_NAME_TO_ID[region]["profile_locations"].items()}, AceAttorneyLocation)
+                world.get_region(region).add_locations({f"{region}: {loc}":id for loc, id in LOCATION_NAME_TO_ID[region]["profile_locations"].items()}, AceAttorneyLocation)
     
 
 
 
 def create_events(world: AceAttorneyWorld) -> None:
 
-    final_case: str = prettify_case_string(world.options.victory_case.current_key).upper()
+    final_case: str = world.victory_case
     victory_location = world.get_location(f"{final_case}: Finish Case: {final_case}")
     victory_item = items.AceAttorneyItem("Victory", ItemClassification.progression, None, world.player)
     victory_location.place_locked_item(victory_item)

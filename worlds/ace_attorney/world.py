@@ -8,7 +8,7 @@ from worlds.AutoWorld import World
 from . import items, locations, regions, rules, web_world
 from . import options as ace_attorney_options  # rename due to a name conflict with World.options
 
-from .regions import unprettify_case_string
+from .regions import unprettify_case_string, prettify_case_string
 
 # APQuest will go through all the parts of the world api one step at a time,
 # with many examples and comments across multiple files.
@@ -56,16 +56,20 @@ class AceAttorneyWorld(World):
     origin_region_name = "Menu"
 
     cases: Set[str] = set()
+    start_case: str = ""
+    victory_case: str = ""
 
     def generate_early(self) -> None:
         if "all" in self.options.cases.value:
             self.options.cases.value.update(self.options.cases.valid_keys)
             self.options.cases.value.discard("all")
-        self.cases = set(unprettify_case_string(case.split(" ", 1)[1]).lower() for case in self.options.cases.value)
-        if self.options.start_case.current_key not in self.cases:
-            self.cases.add(self.options.start_case.current_key)
-        if self.options.victory_case.current_key not in self.cases:
-            self.cases.add(self.options.victory_case.current_key)
+        self.cases = set(case.split(" ", 1)[1] for case in self.options.cases.value)
+        self.start_case = prettify_case_string(self.options.start_case.current_key).upper()
+        self.victory_case = prettify_case_string(self.options.victory_case.current_key).upper()
+        if self.start_case not in self.cases:
+            self.cases.add(self.start_case)
+        if self.victory_case not in self.cases:
+            self.cases.add(self.victory_case)
 
     # Our world class must have certain functions ("steps") that get called during generation.
     # The main ones are: create_regions, set_rules, create_items.

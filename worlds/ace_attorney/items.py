@@ -84,9 +84,6 @@ def create_item_with_correct_classification(world: AceAttorneyWorld, name: str) 
 
     if name in ITEM_DICT.keys() and (ITEM_DICT[name].group == "evidence" or (ITEM_DICT[name].group == "profile" and world.options.profile_sanity)):
         classification = ITEM_DICT[name].classification
-    
-    if ITEM_DICT[name].case != "":
-        name = f"{ITEM_DICT[name].case}: {name}"
 
     return AceAttorneyItem(name, classification, ITEM_NAME_TO_ID[name], world.player)
 

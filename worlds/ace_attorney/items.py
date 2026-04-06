@@ -31,24 +31,26 @@ ITEM_DICT: Dict[str, ItemData] = {
     "That's Enough!": ItemData(13, "filler", classification=ItemClassification.filler),
     "Satorha!": ItemData(14, "filler", classification=ItemClassification.filler),
     "Such Insolence!": ItemData(15, "filler", classification=ItemClassification.filler),
-    "Deadly Bottle": ItemData(16, "evidence", "4-1"),
-    "Smith's Autopsy Report": ItemData(16, "evidence", "4-1"),
-    "Crime Photo 1": ItemData(18, "evidence", "4-1"),
-    "Crime Photo 2": ItemData(19, "evidence", "4-1"),
-    "Phoneix Wright": ItemData(20, "profile", "4-1"),
-    "Kristoph Gavin": ItemData(21, "profile", "4-1"),
-    "Chip Photo": ItemData(22, "evidence", "4-1"),
-    "Winston Payne": ItemData(23, "profile", "4-1"),
-    "Olga Orly": ItemData(24, "profile", "4-1"),
-    "Wright's Cell Phone": ItemData(25, "evidence", "4-1"),
-    "Bloody Ace": ItemData(26, "evidence", "4-1")
+    "4-1: Deadly Bottle": ItemData(16, "evidence", "4-1"),
+    "4-1: Smith's Autopsy Report": ItemData(16, "evidence", "4-1"),
+    "4-1: Crime Photo 1": ItemData(18, "evidence", "4-1"),
+    "4-1: Crime Photo 2": ItemData(19, "evidence", "4-1"),
+    "4-1: Phoneix Wright": ItemData(20, "profile", "4-1"),
+    "4-1: Kristoph Gavin": ItemData(21, "profile", "4-1"),
+    "4-1: Chips Photo": ItemData(22, "evidence", "4-1"),
+    "4-1: Winston Payne": ItemData(23, "profile", "4-1"),
+    "4-1: Olga Orly": ItemData(24, "profile", "4-1"),
+    "4-1: Wright's Cell Phone": ItemData(25, "evidence", "4-1"),
+    "4-1: Bloody Ace": ItemData(26, "evidence", "4-1"),
+    "4-1: Attorney's Badge": ItemData(27, "evidence", "4-1"),
+    "4-1: Olga's Photo": ItemData(28, "evidence", "4-1")
 }
 
 # Every item must have a unique integer ID associated with it.
 # We will have a lookup from item name to ID here that, in world.py, we will import and bind to the world class.
 # Even if an item doesn't exist on specific options, it must be present in this lookup.
 
-ITEM_NAME_TO_ID = {f"{data.case}: {name}" if data.case != "" else name: data.id for name, data in ITEM_DICT.items()}
+ITEM_NAME_TO_ID = {name: data.id for name, data in ITEM_DICT.items()}
 
 FILLER_ITEM_NAMES = [name for name, data in ITEM_DICT.items() if data.group == "filler"]
 

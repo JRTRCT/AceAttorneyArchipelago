@@ -38,7 +38,7 @@ RULES: List[Dict[str, List[int | List[str]]]] = [
     {
         "access_id": [16],
         "location_id": [17, 18, 19],
-        "req_items": [["4-1: Chip Photo"]],
+        "req_items": [["4-1: Chips Photo"]],
         "req_profiles": []
     },
     {

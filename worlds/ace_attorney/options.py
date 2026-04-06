@@ -2,6 +2,10 @@ from dataclasses import dataclass
 
 from Options import Choice, OptionGroup, PerGameCommonOptions, OptionSet, Toggle
 
+from .regions import prettify_case_string
+
+import typing
+
 # In this file, we define the options the player can pick.
 # The most common types of options are Toggle, Range and Choice.
 
@@ -12,6 +16,11 @@ from Options import Choice, OptionGroup, PerGameCommonOptions, OptionSet, Toggle
 
 # For further reading on options, you can also read the Options API Document:
 # https://github.com/ArchipelagoMW/Archipelago/blob/main/docs/options%20api.md
+
+class AAChoice(Choice):
+    @classmethod
+    def get_option_name(cls, value: int) -> str:
+        return "Case " + prettify_case_string(cls.name_lookup[value]).upper()
 
 
 # The first type of Option we'll discuss is the Toggle.
@@ -41,7 +50,7 @@ class LockLocations(Toggle):
 
 
 # A Choice is an option with multiple discrete choices. This will be represented by a dropdown on the website.
-class StartCase(Choice):
+class StartCase(AAChoice):
     """
     The case which is unlocked from the beginning.
     """
@@ -68,7 +77,7 @@ class StartCase(Choice):
     # Choice options must define an explicit default value.
     default = option_case_4_1
 
-class VictoryCase(Choice):
+class VictoryCase(AAChoice):
     """
     Finishing this case is the completion condition for this APWorld.
     """
@@ -105,6 +114,7 @@ class Cases(OptionSet):
     valid_keys_casefold = False
 
     valid_keys = [
+        "all",
         "case_4_1",
         "case_4_2",
         "case_4_3",

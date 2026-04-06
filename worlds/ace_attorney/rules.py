@@ -82,7 +82,7 @@ def set_all_entrance_rules(world: AceAttorneyWorld) -> None:
 
     for entrance in entrances:
         if entrance.connected_region != None and unprettify_case_string(entrance.connected_region.name) in CASES:
-            world.set_rule(entrance, rules.Has(f"Unlock {entrance.connected_region.name}", options=[rules.OptionFilter(StartCase, unprettify_case_string(entrance.connected_region.name), "ne")], filtered_resolution=True))
+            world.set_rule(entrance, rules.Has(f"Unlock {entrance.connected_region.name}", options=[rules.OptionFilter(StartCase, unprettify_case_string(entrance.connected_region.name).lower(), "ne")], filtered_resolution=True))
 
 
 

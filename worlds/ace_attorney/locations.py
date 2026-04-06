@@ -351,10 +351,10 @@ def create_all_locations(world: AceAttorneyWorld) -> None:
 
 def create_regular_locations(world: AceAttorneyWorld) -> None:
 
-    final_case: str = prettify_case_string(world.options.victory_case.current_key)
+    final_case: str = prettify_case_string(world.options.victory_case.current_key).upper()
 
     for region in CASES:
-        if region in world.options.cases.value:
+        if region.lower() in world.options.cases.value:
             
             world.get_region(region).add_locations({f"{prettify_case_string(region)}: {loc}":id if loc != f"Finish Case: {final_case}" else None for loc, id in LOCATION_NAME_TO_ID[region]["locations"].items()}, AceAttorneyLocation)
             if world.options.profile_sanity:
@@ -365,7 +365,7 @@ def create_regular_locations(world: AceAttorneyWorld) -> None:
 
 def create_events(world: AceAttorneyWorld) -> None:
 
-    final_case: str = prettify_case_string(world.options.victory_case.current_key)
+    final_case: str = prettify_case_string(world.options.victory_case.current_key).upper()
     victory_location = world.get_location(f"{final_case}: Finish Case: {final_case}")
     victory_item = items.AceAttorneyItem("Victory", ItemClassification.progression, None, world.player)
     victory_location.place_locked_item(victory_item)

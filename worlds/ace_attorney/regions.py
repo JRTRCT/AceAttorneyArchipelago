@@ -60,7 +60,7 @@ def create_all_regions(world: AceAttorneyWorld) -> None:
     regions: List[Region] = []
 
     for region_name in CASES:
-        if region_name in world.options.cases.value:
+        if region_name.lower() in world.options.cases.value:
             reg = Region(region_name, world.player, world.multiworld)
             regions.append(reg)
     main_menu = Region("Menu", world.player, world.multiworld)
@@ -74,6 +74,6 @@ def connect_regions(world: AceAttorneyWorld) -> None:
     menu_region = world.get_region("Menu")
 
     for region_name in CASES:
-        if region_name in world.options.cases.value:
+        if region_name.lower() in world.options.cases.value:
             reg = world.get_region(region_name)
             menu_region.connect(reg, f"Menu to Case {region_name}",)

@@ -58,6 +58,9 @@ class AceAttorneyWorld(World):
             self.options.cases.value.add(self.options.start_case.current_key)
         if self.options.victory_case.current_key not in self.options.cases.value:
             self.options.cases.value.add(self.options.victory_case.current_key)
+        if "all" in self.options.cases.value:
+            self.options.cases.value.update(self.options.cases.valid_keys)
+            self.options.cases.value.discard("all")
 
     # Our world class must have certain functions ("steps") that get called during generation.
     # The main ones are: create_regions, set_rules, create_items.

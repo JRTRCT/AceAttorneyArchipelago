@@ -354,7 +354,7 @@ def create_regular_locations(world: AceAttorneyWorld) -> None:
     final_case: str = world.victory_case
 
     for region in CASES:
-        if region.lower() in world.cases:
+        if region in world.cases:
             
             world.get_region(region).add_locations({f"{region}: {loc}":id if loc != f"Finish Case: {final_case}" else None for loc, id in LOCATION_NAME_TO_ID[region]["locations"].items()}, AceAttorneyLocation)
             if world.options.profile_sanity:

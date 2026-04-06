@@ -7,7 +7,7 @@ it DOES NOT YET WORK.
 
 ## A Note on Game Support
 
-My intent is to eventually support all four modern PC ports,
+My intent is to eventually support all four modern PC collections,
 however initial development will be for the Apollo Justice Trilogy.
 
 ## Required Software

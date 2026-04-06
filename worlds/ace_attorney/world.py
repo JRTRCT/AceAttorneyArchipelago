@@ -68,8 +68,10 @@ class AceAttorneyWorld(World):
         self.victory_case = prettify_case_string(self.options.victory_case.current_key).upper()
         if self.start_case not in self.cases:
             self.cases.add(self.start_case)
+            self.options.cases.value.add(f"Case {self.start_case}")
         if self.victory_case not in self.cases:
             self.cases.add(self.victory_case)
+            self.options.cases.value.add(f"Case {self.victory_case}")
 
     # Our world class must have certain functions ("steps") that get called during generation.
     # The main ones are: create_regions, set_rules, create_items.
@@ -103,5 +105,5 @@ class AceAttorneyWorld(World):
     def fill_slot_data(self) -> Mapping[str, Any]:
         # If you need access to the player's chosen options on the client side, there is a helper for that.
         return self.options.as_dict(
-            "lock_locations", "profile_sanity", "cases"
+            "lock_locations", "profile_sanity", "cases", "starting_case"
         )

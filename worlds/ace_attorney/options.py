@@ -106,7 +106,12 @@ class VictoryCase(AAChoice):
 
 class Cases(OptionSet):
     """
-    All cases enabled for this APWorld. Starting Case and Victory Case will be added if they are not included.
+    All cases enabled for this slot. Starting Case and Victory Case will be added if they are not included.
+    Case names are of the form \"Case: {game}-{number}\" where \"game\" is from 4-6, and \"number\"
+    is the case number (or SP for the special cases from Dual Destinies and Spirit of Justice,
+    Turnabout Reclaimed and Turnabout Time Traveler).
+
+    Including \"all\" will enable every currently supported case, overriding any other selections made.
     """
 
     display_name = "Enabled Cases"

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Dict, NamedTuple
+from typing import TYPE_CHECKING, Dict, NamedTuple, List
 
 from BaseClasses import Item, ItemClassification
 
@@ -10,41 +10,44 @@ if TYPE_CHECKING:
 import functools
 
 class ItemData(NamedTuple):
+    name:str
     id: int
     group: str
     case: str = ""
     classification: ItemClassification = ItemClassification.progression
 
-ITEM_DICT: Dict[str, ItemData] = {
-    "Objection!": ItemData(1, "filler", classification=ItemClassification.filler),
-    "Hold It!": ItemData(2, "filler", classification=ItemClassification.filler),
-    "Take That!": ItemData(3, "filler", classification=ItemClassification.filler),
-    "Gotcha!": ItemData(4, "filler", classification=ItemClassification.filler),
-    "Eureka!": ItemData(5, "filler", classification=ItemClassification.filler),
-    "'Scuse Me!": ItemData(6, "filler", classification=ItemClassification.filler),
-    "Got It!": ItemData(7, "filler", classification=ItemClassification.filler),
-    "Not So Fast!": ItemData(8, "filler", classification=ItemClassification.filler),
-    "Overruled!": ItemData(9, "filler", classification=ItemClassification.filler),
-    "Silence!": ItemData(10, "filler", classification=ItemClassification.filler),
-    "Yes!": ItemData(11, "filler", classification=ItemClassification.filler),
-    "Shut Up!": ItemData(12, "filler", classification=ItemClassification.filler),
-    "That's Enough!": ItemData(13, "filler", classification=ItemClassification.filler),
-    "Satorha!": ItemData(14, "filler", classification=ItemClassification.filler),
-    "Such Insolence!": ItemData(15, "filler", classification=ItemClassification.filler),
-    "4-1: Deadly Bottle": ItemData(16, "evidence", "4-1"),
-    "4-1: Smith's Autopsy Report": ItemData(16, "evidence", "4-1"),
-    "4-1: Crime Photo 1": ItemData(18, "evidence", "4-1"),
-    "4-1: Crime Photo 2": ItemData(19, "evidence", "4-1"),
-    "4-1: Phoneix Wright": ItemData(20, "profile", "4-1"),
-    "4-1: Kristoph Gavin": ItemData(21, "profile", "4-1"),
-    "4-1: Chips Photo": ItemData(22, "evidence", "4-1"),
-    "4-1: Winston Payne": ItemData(23, "profile", "4-1"),
-    "4-1: Olga Orly": ItemData(24, "profile", "4-1"),
-    "4-1: Wright's Cell Phone": ItemData(25, "evidence", "4-1"),
-    "4-1: Bloody Ace": ItemData(26, "evidence", "4-1"),
-    "4-1: Attorney's Badge": ItemData(27, "evidence", "4-1"),
-    "4-1: Olga's Photo": ItemData(28, "evidence", "4-1")
-}
+ITEM_LIST: List[ItemData] = [
+    ItemData("Objection!", 1, "filler", classification=ItemClassification.filler),
+    ItemData("Hold It!", 2, "filler", classification=ItemClassification.filler),
+    ItemData("Take That!", 3, "filler", classification=ItemClassification.filler),
+    ItemData("Gotcha!", 4, "filler", classification=ItemClassification.filler),
+    ItemData("Eureka!", 5, "filler", classification=ItemClassification.filler),
+    ItemData("'Scuse Me!", 6, "filler", classification=ItemClassification.filler),
+    ItemData("Got It!", 7, "filler", classification=ItemClassification.filler),
+    ItemData("Not So Fast!", 8, "filler", classification=ItemClassification.filler),
+    ItemData("Overruled!", 9, "filler", classification=ItemClassification.filler),
+    ItemData("Silence!", 10, "filler", classification=ItemClassification.filler),
+    ItemData("Yes!", 11, "filler", classification=ItemClassification.filler),
+    ItemData("Shut Up!", 12, "filler", classification=ItemClassification.filler),
+    ItemData("That's Enough!", 13, "filler", classification=ItemClassification.filler),
+    ItemData("Satorha!", 14, "filler", classification=ItemClassification.filler),
+    ItemData("Such Insolence!", 15, "filler", classification=ItemClassification.filler),
+    ItemData("Deadly Bottle", 16, "evidence", "4-1"),
+    ItemData("Smith's Autopsy Report", 16, "evidence", "4-1"),
+    ItemData("Crime Photo 1", 18, "evidence", "4-1"),
+    ItemData("Crime Photo 2", 19, "evidence", "4-1"),
+    ItemData("Phoneix Wright", 20, "profile", "4-1"),
+    ItemData("Kristoph Gavin", 21, "profile", "4-1"),
+    ItemData("Chips Photo", 22, "evidence", "4-1"),
+    ItemData("Winston Payne", 23, "profile", "4-1"),
+    ItemData("Olga Orly", 24, "profile", "4-1"),
+    ItemData("Wright's Cell Phone", 25, "evidence", "4-1"),
+    ItemData("Bloody Ace", 26, "evidence", "4-1"),
+    ItemData("Attorney's Badge", 27, "evidence", "4-1"),
+    ItemData("Olga's Photo", 28, "evidence", "4-1")
+]
+
+ITEM_DICT: Dict[str, ItemData] = {data.name if data.case == "" else f"{data.case}: {data.name}": data for data in ITEM_LIST}
 
 # Every item must have a unique integer ID associated with it.
 # We will have a lookup from item name to ID here that, in world.py, we will import and bind to the world class.
@@ -52,7 +55,7 @@ ITEM_DICT: Dict[str, ItemData] = {
 
 ITEM_NAME_TO_ID = {name: data.id for name, data in ITEM_DICT.items()}
 
-FILLER_ITEM_NAMES = [name for name, data in ITEM_DICT.items() if data.group == "filler"]
+FILLER_ITEM_NAMES = [data.name for data in ITEM_LIST if data.group == "filler"]
 
 
 # Each Item instance must correctly report the "game" it belongs to.

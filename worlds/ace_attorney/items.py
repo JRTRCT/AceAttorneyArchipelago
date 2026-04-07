@@ -44,7 +44,54 @@ ITEM_LIST: List[ItemData] = [
     ItemData("Wright's Cell Phone", 25, "evidence", "4-1"),
     ItemData("Bloody Ace", 26, "evidence", "4-1"),
     ItemData("Attorney's Badge", 27, "evidence", "4-1"),
-    ItemData("Olga's Photo", 28, "evidence", "4-1")
+    ItemData("Olga's Photo", 28, "evidence", "4-1"),
+    ItemData("Attorney's Badge", 29, "evidence", "4-2"),
+    ItemData("Map", 30, "evidence", "4-2"),
+    ItemData("Bowl", 31, "evidence", "4-2"),
+    ItemData("Trucy's Evidence", 32, "evidence", "4-2"),
+    ItemData("Cell Phone", 33, "evidence", "4-2"),
+    ItemData("Mirror", 34, "evidence", "4-2"),
+    ItemData("Fingerprint Powder", 35, "evidence", "4-2"),
+    ItemData("Meraktis's Autopsy report", 36, "evidence", "4-2"),
+    ItemData("Knife", 37, "evidence", "4-2"),
+    ItemData("Noodle Stand", 38, "evidence", "4-2"),
+    ItemData("Plum's Evidence", 39, "evidence", "4-2"),
+    ItemData("Wocky's Check-Up Report", 40, "evidence", "4-2"),
+    ItemData("Pistol", 41, "evidence", "4-2"),
+    ItemData("Slippers", 42, "evidence", "4-2"),
+    ItemData("Detective Skye's Orders", 43, "evidence", "4-2"),
+    ItemData("Alita's Sandles", 44, "evidence", "4-2"),
+    ItemData("Lamp", 45, "evidence", "4-2"),
+    ItemData("Wocky's Chart", 46, "evidence", "4-2"),
+    ItemData("Bullet", 47, "evidence", "4-2"),
+    ItemData("Phoenix Wright", 48, "profile", "4-2"),
+    ItemData("Trucy Wright", 49, "profile", "4-2"),
+    ItemData("Dr. Hickfield", 50, "profile", "4-2"),
+    ItemData("Guy Eldoon", 51, "profile", "4-2"),
+    ItemData("Plum Kitaki", 52, "profile", "4-2"),
+    ItemData("Alita Talia", 53, "profile", "4-2"),
+    ItemData("Ema Skye", 54, "profile", "4-2"),
+    ItemData("Klavier Gavin", 55, "profile", "4-2"),
+    ItemData("Wocky Kitaki", 56, "profile", "4-2"),
+    ItemData("Winfred Kitaki", 57, "profile", "4-2"),
+    ItemData("Pal Meraktis", 58, "profile", "4-2"),
+    ItemData("Wesley Stickler", 59, "profile", "4-2"),
+    ItemData("Unlock 4-1", 60, "unlock", ""),
+    ItemData("Unlock 4-2", 61, "unlock", ""),
+    ItemData("Unlock 4-3", 62, "unlock", ""),
+    ItemData("Unlock 4-4", 63, "unlock", ""),
+    ItemData("Unlock 5-1", 64, "unlock", ""),
+    ItemData("Unlock 5-2", 65, "unlock", ""),
+    ItemData("Unlock 5-3", 66, "unlock", ""),
+    ItemData("Unlock 5-4", 67, "unlock", ""),
+    ItemData("Unlock 5-5", 68, "unlock", ""),
+    ItemData("Unlock 5-SP", 69, "unlock", ""),
+    ItemData("Unlock 6-1", 70, "unlock", ""),
+    ItemData("Unlock 6-2", 71, "unlock", ""),
+    ItemData("Unlock 6-3", 72, "unlock", ""),
+    ItemData("Unlock 6-4", 73, "unlock", ""),
+    ItemData("Unlock 6-5", 74, "unlock", ""),
+    ItemData("Unlock 6-SP", 75, "unlock", "")
 ]
 
 ITEM_DICT: Dict[str, ItemData] = {data.name if data.case == "" else f"{data.case}: {data.name}": data for data in ITEM_LIST}
@@ -85,7 +132,7 @@ def create_item_with_correct_classification(world: AceAttorneyWorld, name: str) 
     # but it seemed nicer to have it in its own function over here in items.py.
     classification = ItemClassification.filler
 
-    if name in ITEM_DICT.keys() and (ITEM_DICT[name].group == "evidence" or (ITEM_DICT[name].group == "profile" and world.options.profile_sanity)):
+    if name in ITEM_DICT.keys():
         classification = ITEM_DICT[name].classification
 
     return AceAttorneyItem(name, classification, ITEM_NAME_TO_ID[name], world.player)
@@ -105,6 +152,8 @@ def create_all_items(world: AceAttorneyWorld) -> None:
     itempool: list[Item] = [world.create_item(name) for name, data in ITEM_DICT.items() if data.group == "evidence" and data.case in world.cases]
     if world.options.profile_sanity:
         itempool.extend(world.create_item(name) for name, data in ITEM_DICT.items() if data.group == "profile" and data.case in world.cases)
+    if world.options.lock_locations:
+        itempool.extend(world.create_item(name) for name, data in ITEM_DICT.items() if data.group == "unlock" and data.case in world.cases and data.case != world.start_case)
 
     # The length of our itempool is easy to determine, since we have it as a list.
     number_of_items = len(itempool)

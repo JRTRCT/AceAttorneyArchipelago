@@ -33,7 +33,7 @@ ITEM_LIST: List[ItemData] = [
     ItemData("Satorha!", 14, "filler", classification=ItemClassification.filler),
     ItemData("Such Insolence!", 15, "filler", classification=ItemClassification.filler),
     ItemData("Deadly Bottle", 16, "evidence", "4-1"),
-    ItemData("Smith's Autopsy Report", 16, "evidence", "4-1"),
+    ItemData("Smith's Autopsy Report", 17, "evidence", "4-1"),
     ItemData("Crime Photo 1", 18, "evidence", "4-1"),
     ItemData("Crime Photo 2", 19, "evidence", "4-1"),
     ItemData("Phoneix Wright", 20, "profile", "4-1"),
@@ -76,25 +76,25 @@ ITEM_LIST: List[ItemData] = [
     ItemData("Winfred Kitaki", 57, "profile", "4-2"),
     ItemData("Pal Meraktis", 58, "profile", "4-2"),
     ItemData("Wesley Stickler", 59, "profile", "4-2"),
-    ItemData("Unlock 4-1", 60, "unlock", ""),
-    ItemData("Unlock 4-2", 61, "unlock", ""),
-    ItemData("Unlock 4-3", 62, "unlock", ""),
-    ItemData("Unlock 4-4", 63, "unlock", ""),
-    ItemData("Unlock 5-1", 64, "unlock", ""),
-    ItemData("Unlock 5-2", 65, "unlock", ""),
-    ItemData("Unlock 5-3", 66, "unlock", ""),
-    ItemData("Unlock 5-4", 67, "unlock", ""),
-    ItemData("Unlock 5-5", 68, "unlock", ""),
-    ItemData("Unlock 5-SP", 69, "unlock", ""),
-    ItemData("Unlock 6-1", 70, "unlock", ""),
-    ItemData("Unlock 6-2", 71, "unlock", ""),
-    ItemData("Unlock 6-3", 72, "unlock", ""),
-    ItemData("Unlock 6-4", 73, "unlock", ""),
-    ItemData("Unlock 6-5", 74, "unlock", ""),
-    ItemData("Unlock 6-SP", 75, "unlock", "")
+    ItemData("Unlock 4-1", 60, "unlock", "4-1"),
+    ItemData("Unlock 4-2", 61, "unlock", "4-2"),
+    ItemData("Unlock 4-3", 62, "unlock", "4-3"),
+    ItemData("Unlock 4-4", 63, "unlock", "4-4"),
+    ItemData("Unlock 5-1", 64, "unlock", "5-1"),
+    ItemData("Unlock 5-2", 65, "unlock", "5-2"),
+    ItemData("Unlock 5-3", 66, "unlock", "5-3"),
+    ItemData("Unlock 5-4", 67, "unlock", "5-4"),
+    ItemData("Unlock 5-5", 68, "unlock", "5-5"),
+    ItemData("Unlock 5-SP", 69, "unlock", "5-SP"),
+    ItemData("Unlock 6-1", 70, "unlock", "6-1"),
+    ItemData("Unlock 6-2", 71, "unlock", "6-2"),
+    ItemData("Unlock 6-3", 72, "unlock", "6-3"),
+    ItemData("Unlock 6-4", 73, "unlock", "6-4"),
+    ItemData("Unlock 6-5", 74, "unlock", "6-5"),
+    ItemData("Unlock 6-SP", 75, "unlock", "6-SP")
 ]
 
-ITEM_DICT: Dict[str, ItemData] = {data.name if data.case == "" else f"{data.case}: {data.name}": data for data in ITEM_LIST}
+ITEM_DICT: Dict[str, ItemData] = {data.name if data.case == "" or data.group == "unlock" else f"{data.case}: {data.name}": data for data in ITEM_LIST}
 
 # Every item must have a unique integer ID associated with it.
 # We will have a lookup from item name to ID here that, in world.py, we will import and bind to the world class.

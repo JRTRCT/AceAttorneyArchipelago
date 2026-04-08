@@ -41,6 +41,12 @@ def prettify_case_string(case_name: str) -> str:
     split = case_name.split('_')
     return f"{split[1]}-{split[2]}"
 
+def unprettify_case_string(case_name: str) -> str:
+    if case_name.count('-') != 1:
+        return case_name
+    split = case_name.split('-')
+    return f"case_{split[0]}_{split[1]}"
+
 
 def create_and_connect_regions(world: AceAttorneyWorld) -> None:
     create_all_regions(world)

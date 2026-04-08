@@ -63,16 +63,16 @@ class StartCase(AAChoice):
     option_case_4_4 = 3
     option_case_5_1 = 4
     option_case_5_2 = 5
-    option_case_5_3 = 6
-    option_case_5_4 = 7
-    option_case_5_5 = 8
-    option_case_5_SP = 9
-    option_case_6_1 = 10
-    option_case_6_2 = 11
-    option_case_6_3 = 12
-    option_case_6_4 = 13
-    option_case_6_5 = 14
-    option_case_6_SP = 15
+    #option_case_5_3 = 6
+    #option_case_5_4 = 7
+    #option_case_5_5 = 8
+    #option_case_5_SP = 9
+    #option_case_6_1 = 10
+    #option_case_6_2 = 11
+    #option_case_6_3 = 12
+    #option_case_6_4 = 13
+    #option_case_6_5 = 14
+    #option_case_6_SP = 15
 
     # Choice options must define an explicit default value.
     default = option_case_4_1
@@ -90,16 +90,16 @@ class VictoryCase(AAChoice):
     option_case_4_4 = 3
     option_case_5_1 = 4
     option_case_5_2 = 5
-    option_case_5_3 = 6
-    option_case_5_4 = 7
-    option_case_5_5 = 8
-    option_case_5_SP = 9
-    option_case_6_1 = 10
-    option_case_6_2 = 11
-    option_case_6_3 = 12
-    option_case_6_4 = 13
-    option_case_6_5 = 14
-    option_case_6_SP = 15
+    #option_case_5_3 = 6
+    #option_case_5_4 = 7
+    #option_case_5_5 = 8
+    #option_case_5_SP = 9
+    #option_case_6_1 = 10
+    #option_case_6_2 = 11
+    #option_case_6_3 = 12
+    #option_case_6_4 = 13
+    #option_case_6_5 = 14
+    #option_case_6_SP = 15
 
     # Choice options must define an explicit default value.
     default = option_case_4_1
@@ -130,17 +130,17 @@ class Cases(OptionSet):
         "Case 4-3",
         "Case 4-4",
         "Case 5-1",
-        "Case 5-2",
-        "Case 5-3",
-        "Case 5-4",
-        "Case 5-5",
-        "Case 5-SP",
-        "Case 6-1",
-        "Case 6-2",
-        "Case 6-3",
-        "Case 6-4",
-        "Case 6-5",
-        "Case 6-SP"
+        "Case 5-2"#,
+        #"Case 5-3",
+        #"Case 5-4",
+        #"Case 5-5",
+        #"Case 5-SP",
+        #"Case 6-1",
+        #"Case 6-2",
+        #"Case 6-3",
+        #"Case 6-4",
+        #"Case 6-5",
+        #"Case 6-SP"
     ]
 
     default = [
@@ -149,17 +149,7 @@ class Cases(OptionSet):
         "Case 4-3",
         "Case 4-4",
         "Case 5-1",
-        "Case 5-2",
-        "Case 5-3",
-        "Case 5-4",
-        "Case 5-5",
-        "Case 5-SP",
-        "Case 6-1",
-        "Case 6-2",
-        "Case 6-3",
-        "Case 6-4",
-        "Case 6-5",
-        "Case 6-SP"
+        "Case 5-2"
     ]
 
 

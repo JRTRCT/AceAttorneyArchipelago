@@ -6,5 +6,5 @@ class TestProfilesanity(AceAttorneyTestBase):
         "start_case": "case_4_1",
         "victory_case": "case_4_1",
         "lock_locations": False,
-        "cases": ["all"]
+        "cases": ["bleh"]
     }

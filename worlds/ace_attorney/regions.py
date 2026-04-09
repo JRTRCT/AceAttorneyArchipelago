@@ -39,6 +39,8 @@ def prettify_case_string(case_name: str) -> str:
     if case_name.count('_') != 2:
         return case_name
     split = case_name.split('_')
+    if split[0].lower() != "case":
+        return case_name
     return f"{split[1]}-{split[2]}"
 
 def unprettify_case_string(case_name: str) -> str:

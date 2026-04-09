@@ -91,7 +91,8 @@ ITEM_LIST: List[ItemData] = [
     ItemData("Unlock 6-3", 72, "unlock", "6-3"),
     ItemData("Unlock 6-4", 73, "unlock", "6-4"),
     ItemData("Unlock 6-5", 74, "unlock", "6-5"),
-    ItemData("Unlock 6-SP", 75, "unlock", "6-SP")
+    ItemData("Unlock 6-SP", 75, "unlock", "6-SP"),
+    ItemData("Attorney's Badge", 76, "evidence", "4-3")
 ]
 
 ITEM_DICT: Dict[str, ItemData] = {data.name if data.case == "" or data.group == "unlock" else f"{data.case}: {data.name}": data for data in ITEM_LIST}
